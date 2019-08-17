@@ -1,0 +1,27 @@
+.page {
+    height:100vh;
+    background-color: aliceblue;
+}
+
+.box {
+    height: 89.5vh;
+    padding:0;
+    border: 1px solid;
+    background-color: beige;
+}
+
+.header {
+    height: 100px;
+    border: 1px solid;
+    background-color: beige;
+}
+
+.card {
+    width: 15%;
+    height: 25%;
+    border: 1px solid;
+    display: inline-flex;
+    flex-wrap: wrap;
+    margin-top: 3.5%;
+    margin-left: 1.2%
+}
