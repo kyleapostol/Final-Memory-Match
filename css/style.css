@@ -25,3 +25,9 @@
     margin-top: 3.5%;
     margin-left: 1.2%
 }
+
+.cover {
+    background-image: url('../images/card.png');
+    background-size: cover;
+    background-position: center;
+}
