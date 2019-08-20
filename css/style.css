@@ -1,3 +1,10 @@
+.front {
+    background-image: url('../images/card.png');
+    background-size: cover;
+    background-position: center;
+
+}
+
 .page {
     height:100vh;
     background-color: aliceblue;
@@ -23,5 +30,12 @@
     display: inline-flex;
     flex-wrap: wrap;
     margin-top: 3.5%;
-    margin-left: 1.2%
+    margin-left: 1.2%;
+}
+
+.hidden {
+    display: none;
+}
+.side-containers {
+    border: 1px solid;
 }
