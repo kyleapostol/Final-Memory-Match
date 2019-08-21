@@ -2,15 +2,15 @@
     background-image: url('../images/card.png');
     background-size: cover;
     background-position: center;
-
+    cursor: pointer;
 }
 
 .page {
     height:100vh;
-    background-color: aliceblue;
+    background-color: beige;
 }
 
-.box {
+.box.col-xl-9 {
     height: 89.5vh;
     padding:0;
     border: 1px solid;
@@ -25,7 +25,7 @@
 
 .card {
     width: 15%;
-    height: 25%;
+    height: 26%;
     border: 1px solid;
     display: inline-flex;
     flex-wrap: wrap;
@@ -36,6 +36,7 @@
 .hidden {
     display: none;
 }
+
 .side-containers {
     border: 1px solid;
 }
