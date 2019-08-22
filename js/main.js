@@ -46,7 +46,6 @@ function createCards(){
         $(cardContainer).append(backCard);
         $(".main").append(cardContainer);
         
-
         var cardContainer2 = $("<div></div>").addClass("card-container card").click(handleCardClicked);
         var frontCard2 = $("<div></div>").addClass("front col-sm");
         var backCard2 = $("<div></div>").addClass("col-sm");
@@ -60,7 +59,6 @@ function createCards(){
     }
 }
 
-
 function handleCardClicked(event){
     if(isClicked){
         $(event.currentTarget.childNodes[0]).addClass('hidden');
@@ -71,14 +69,12 @@ function handleCardClicked(event){
             firstCardClicked = event.currentTarget.innerHTML;
             card1 = $(event.currentTarget.childNodes[0]);
             flippedCard = $(event.currentTarget.childNodes[1]);
-            console.log("firstCardClicked: ", firstCardClicked);
             return firstCardClicked;
         } else {
             secondCardClicked = event.currentTarget.innerHTML;
             card2 = $(event.currentTarget.childNodes[0]);
             flippedCard2 = $(event.currentTarget.childNodes[1]);
             winCondition(firstCardClicked, secondCardClicked);
-            console.log("secondCardClicked: ", secondCardClicked);
             firstCardClicked = null;
         }        
     }
@@ -95,7 +91,7 @@ function winCondition(firstCardClicked, secondCardClicked){
         card1 = null;
         card2 = null;
         isClicked = true;
-        $('.score').text(handleAverage());
+        $('span').text(handleAverage());
         finishGame();
     } else {
         console.log("Did NOT match")
