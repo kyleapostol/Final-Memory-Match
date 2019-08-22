@@ -40,7 +40,7 @@ function createCards(){
         var backCard = $("<div></div>").addClass("col-sm");
 
         $(backCard).css({"background-image": "url(../images/"  + cardArr[i] + ")", "background-size": "cover",
-        "background-position": "center"}).addClass("hidden");
+        "background-position": "center", "border": "3px double #F23333"}).addClass("hidden");
 
         $(cardContainer).append(frontCard);
         $(cardContainer).append(backCard);
@@ -51,7 +51,7 @@ function createCards(){
         var backCard2 = $("<div></div>").addClass("col-sm");
         
         $(backCard2).css({"background-image": "url(../images/"  + cardArrCopy[duplicateCard] + ")", "background-size": "cover",
-        "background-position": "center"}).addClass("hidden"); 
+        "background-position": "center", "border": "3px double #F23333"}).addClass("hidden"); 
 
         $(cardContainer2).append(frontCard2);
         $(cardContainer2).append(backCard2);
@@ -66,12 +66,16 @@ function handleCardClicked(event){
         $(frontCard).click(event=>{event.stopImmediatePropagation()});
         
         if(firstCardClicked === null) {
-            firstCardClicked = event.currentTarget.innerHTML;
+            firstCardClicked = event.currentTarget.innerHTML;            
+            console.log("first card clicked: ", firstCardClicked);
+
             card1 = $(event.currentTarget.childNodes[0]);
             flippedCard = $(event.currentTarget.childNodes[1]);
             return firstCardClicked;
         } else {
-            secondCardClicked = event.currentTarget.innerHTML;
+            secondCardClicked = event.currentTarget.innerHTML;            
+            console.log("second card clicked: ", secondCardClicked);
+
             card2 = $(event.currentTarget.childNodes[0]);
             flippedCard2 = $(event.currentTarget.childNodes[1]);
             winCondition(firstCardClicked, secondCardClicked);
@@ -113,7 +117,8 @@ function notMatching() {
 
 function handleAverage(){
     avg = 100 * (matches / attempts);
-    return avg.toFixed(1).toString();
+    var accNum =avg.toFixed(1).toString();
+    return accNum + '%';
 }
 
 function finishGame(){
