@@ -23,7 +23,7 @@ body{
 
 .box.col-xl-9 {
     height: 86.5vh;
-    padding:0;
+    padding:2%;
     /* border: 1px solid; */
     /* background-color: rgb(35, 36, 33); */
 }
@@ -57,8 +57,14 @@ body{
 }
 
 .hero-container {
-    padding:39%;
-    margin-top: 30%;
+    padding:41%;
+    margin-top: 38%;
     background-color: azure;
+}
+
+.hero-image {
+    background-image: url('../images/ironman.gif');
+    background-size: cover;
+    background-position: center;
 }
 
