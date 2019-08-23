@@ -1,8 +1,9 @@
-var cardArr = ["batman3.jpg", "captAmer.jpg", "deadpool.png", "flash.jpg", "aquaman.jpg",
-             "iron_Man.jpg", "spiderman2.jpg", "superman3.jpg", "wolverine.png"];
+var cardArr = ["batman3.jpg", "captAmer.jpg", "deadpool.jpg", "flash.jpg", "aquaman.jpg",
+             "iron_Man.jpg", "spiderman2.jpg", "superman3.jpg", "wolverine.jpg"];
              
-var cardArrCopy = ["batman3.jpg", "captAmer.jpg", "deadpool.png", "flash.jpg", "aquaman.jpg",
-"iron_Man.jpg", "spiderman2.jpg", "superman3.jpg", "wolverine.png"]; 
+var cardArrCopy = ["batman3.jpg", "captAmer.jpg", "deadpool.jpg", "flash.jpg", "aquaman.jpg",
+"iron_Man.jpg", "spiderman2.jpg", "superman3.jpg", "wolverine.jpg"]; 
+
 
 var matches = 0;
 var attempts = 0;
@@ -57,12 +58,10 @@ function addHeroSticker(){
 }
 
 function createCards(){    
-
     shuffle(cardArr); 
     shuffle(cardArrCopy);
-    addHeroSticker();
+    // addHeroSticker();
 
-    $(".hero-container").css({"background-image":"url('../images')"})
     for(var i = 0; i < cardArr.length; i++){
         duplicateCard = i;
 
@@ -71,8 +70,7 @@ function createCards(){
         var backCard = $("<div></div>").addClass("col-sm");
 
         $(backCard).css({"background-image": "url(../images/"  + cardArr[i] + ")", "background-size": "cover",
-        "background-position": "center", "border": "3px double #F23333"});
-// .addClass("hidden")
+        "background-position": "center", "border": "3px double #F23333"}).addClass("hidden");
         $(cardContainer).append(frontCard);
         $(cardContainer).append(backCard);
         $(".main").append(cardContainer);
@@ -82,8 +80,8 @@ function createCards(){
         var backCard2 = $("<div></div>").addClass("col-sm");
         
         $(backCard2).css({"background-image": "url(../images/"  + cardArrCopy[duplicateCard] + ")", "background-size": "cover",
-        "background-position": "center", "border": "3px double #F23333"});
-// .addClass("hidden")
+        "background-position": "center", "border": "3px double #F23333"}).addClass("hidden");
+//
         $(cardContainer2).append(frontCard2);
         $(cardContainer2).append(backCard2);
         $(".main").append(cardContainer2);
@@ -116,10 +114,89 @@ function handleCardClicked(event){
 }
 
 function appendCharacter(card){
+    var endStr = card.search(".jpg");
+    var heroGif = card.substring(104, endStr);
 
-    console.log("string:::::", card.substring(104));
+    switch(heroGif){
+        case 'batman3':
+            console.log("sticker: ", heroGif);
+            $(".hero-container").addClass("batman-gif");
+            setTimeout(() => {
+                $(".hero-container").removeClass("batman-gif");
+            }, 2000);
+            break; 
 
-    $(".hero-container").addClass("hero-image");
+        case 'captAmer':
+            console.log("sticker: ", heroGif);
+            $(".hero-container").addClass("captainAmer-gif");
+            setTimeout(() => {
+                $(".hero-container").removeClass("captainAmer-gif");
+            }, 2000);
+            break;       
+
+        case 'deadpool':
+            console.log("sticker: ", heroGif);
+            $(".hero-container").addClass("deadpool-gif");
+            setTimeout(() => {
+                $(".hero-container").removeClass("deadpool-gif");
+            }, 2000);
+            break;
+
+        case 'flash':
+            console.log("sticker: ", heroGif);
+            $(".hero-container").addClass("flash-gif");
+            setTimeout(() => {
+                $(".hero-container").removeClass("flash-gif");
+            }, 2000);
+            break;  
+
+        case 'aquaman':
+            console.log("sticker: ", heroGif);
+            $(".hero-container").addClass("aquaman-gif");
+            setTimeout(() => {
+                $(".hero-container").removeClass("aquaman-gif");
+            }, 2000);
+            break;
+
+        case 'iron_Man':
+            console.log("sticker: ", heroGif);
+            $(".hero-container").addClass("ironman-gif");
+            setTimeout(() => {
+                $(".hero-container").removeClass("ironman-gif");
+            }, 2000);
+            break;      
+
+        case 'spiderman2':
+            console.log("sticker: ", heroGif);
+            $(".hero-container").addClass("spiderman-gif");
+            setTimeout(() => {
+                $(".hero-container").removeClass("spiderman-gif");
+            }, 2000);
+            break;    
+
+        case 'superman3':
+            console.log("sticker: ", heroGif);
+            $(".hero-container").addClass("superman-gif");
+            setTimeout(() => {
+                $(".hero-container").removeClass("superman-gif");
+            }, 2000);
+            break;     
+
+        case 'wolverine':
+            console.log("sticker: ", heroGif);
+            $(".hero-container").addClass("wolverine-gif");
+            setTimeout(() => {
+                $(".hero-container").removeClass("wolverine-gif");
+            }, 2000);
+            break;
+
+        default:
+            console.log("default: ", heroGif);
+            $(".hero-container").addClass("batman-gif");
+            setTimeout(() => {
+                $(".hero-container").removeClass("batman-gif");
+            }, 2000); 
+    }
 };
 
 
