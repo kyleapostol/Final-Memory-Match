@@ -1,14 +1,19 @@
 body{
     overflow: hidden;
     height: 100vh;
-    background-image: linear-gradient(white, black);
+    background-image: linear-gradient(white, #F26419);
 }
+
 .front {
     background-image: url('../images/cardlogo2.jpg!d');
     background-size: cover;
     background-position: center;
     cursor: pointer;
-    border: 3px double #F23333;
+    border: 3px outset #F23333;
+}
+
+.col-xl-3 {
+    background-image: url("../images/hero-container.gif"); 
 }
 
 .front:hover {
@@ -18,19 +23,15 @@ body{
 
 .page {
     height:100vh;
-    /* background-color: beige; */
 }
 
 .box.col-xl-9 {
     height: 86.5vh;
     padding:2%;
-    /* border: 1px solid; */
-    /* background-color: rgb(35, 36, 33); */
 }
 
 .header {
     height: 100px;
-    /* border: 1px solid; */
     background-image: url('../images/logo.png');
     background-position: center;
     background-repeat: no-repeat;
@@ -50,16 +51,16 @@ body{
 }
 
 .side-container {
-    /* border: 1px solid; */
     padding: 10%;
     margin-top: 13%;
     background-color: azure;
 }
 
 .hero-container {
-    padding:41%;
-    margin-top: 38%;
-    background-color: azure;
+    padding:45%;
+    margin-top: 37%;
+    margin-left:4%;
+    background-image: url('../images/hero-container.gif')
 }
 
 .batman-gif {
@@ -69,9 +70,10 @@ body{
 }
 
 .deadpool-gif {
-    background-image: url('../images/deadpool2.gif');
-    background-size: cover;
+    background-image: url('../images/deadpool.gif');
+    background-size: 50%;
     background-position: center;
+    background-repeat: no-repeat;
 }
 
 .ironman-gif {
@@ -86,18 +88,21 @@ body{
 }
 .flash-gif {
     background-image: url('../images/flash.gif');
-    background-size: cover;
+    background-size: 70%;
     background-position: center;
+    background-repeat: no-repeat;
 }
 .spiderman-gif {
     background-image: url('../images/spiderman.gif');
-    background-size: cover;
+    background-size: 70%;
     background-position: center;
+    background-repeat: no-repeat;
 }
 .superman-gif {
     background-image: url('../images/superman.gif');
-    background-size: cover;
+    background-size: 70%;
     background-position: center;
+    background-repeat: no-repeat;
 }
 .aquaman-gif {
     background-image: url('../images/aquaman.gif');
@@ -106,6 +111,12 @@ body{
 }
 .wolverine-gif {
     background-image: url('../images/wolverine.gif');
+    background-size: cover;
+    background-position: center;
+}
+
+.default-gif {
+    background-image: url('../images/default.gif');
     background-size: cover;
     background-position: center;
 }
