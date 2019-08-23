@@ -1,11 +1,13 @@
-var cardArr = ["batman.jpg", "captain_America.jpg", "deadpool.png", "flash.jpg", "green_lantern.png",
-             "iron_Man.jpg", "spiderman.jpg", "superman.jpg", "wonder_woman.png"];
+var cardArr = ["batman3.jpg", "captAmer.jpg", "deadpool.jpg", "flash.jpg", "aquaman.jpg",
+             "iron_Man.jpg", "spiderman2.jpg", "superman3.jpg", "wolverine.jpg"];
              
-var cardArrCopy = ["batman.jpg", "captain_America.jpg", "deadpool.png", "flash.jpg", "green_lantern.png",
-"iron_Man.jpg", "spiderman.jpg", "superman.jpg", "wonder_woman.png"]; 
+var cardArrCopy = ["batman3.jpg", "captAmer.jpg", "deadpool.jpg", "flash.jpg", "aquaman.jpg",
+"iron_Man.jpg", "spiderman2.jpg", "superman3.jpg", "wolverine.jpg"]; 
+
 
 var matches = 0;
 var attempts = 0;
+var gamesPlayed = 0;
 var avg = 0;             
 var duplicateCard = null;
 var firstCardClicked = null;
@@ -18,6 +20,8 @@ var isClicked = true;
 $(document).ready(initialize);
 function initialize(){
     $('.main').ready(createCards);
+    $('shuffle-btn').ready(handleShuffleBtn);
+    $('reset-btn').ready(handleReset);
 }
 
 function shuffle(arr) {
@@ -27,10 +31,36 @@ function shuffle(arr) {
     }
     return arr;
 }
+function handleReset(){
+    $(".reset-btn").click(()=>{
+        avg = 0;
+        console.log("avg", avg)
+        $('span').text(avg);
+        $('a').text(avg);
+        shuffle(cardArr);
+        $(".main").empty();
+        createCards()
+    });
+}
 
-function createCards(){
+function handleShuffleBtn(){
+        $(".shuffle-btn").click(()=>{
+            gamesPlayed ++;
+            $('a').text(gamesPlayed);
+            shuffle(cardArr);
+            $(".main").empty();
+            createCards()
+            });
+}
+
+function addHeroSticker(){
+    $(".hero-container").addClass("hero-image");
+}
+
+function createCards(){    
     shuffle(cardArr); 
     shuffle(cardArrCopy);
+    // addHeroSticker();
 
     for(var i = 0; i < cardArr.length; i++){
         duplicateCard = i;
@@ -41,7 +71,6 @@ function createCards(){
 
         $(backCard).css({"background-image": "url(../images/"  + cardArr[i] + ")", "background-size": "cover",
         "background-position": "center", "border": "3px double #F23333"}).addClass("hidden");
-
         $(cardContainer).append(frontCard);
         $(cardContainer).append(backCard);
         $(".main").append(cardContainer);
@@ -51,8 +80,8 @@ function createCards(){
         var backCard2 = $("<div></div>").addClass("col-sm");
         
         $(backCard2).css({"background-image": "url(../images/"  + cardArrCopy[duplicateCard] + ")", "background-size": "cover",
-        "background-position": "center", "border": "3px double #F23333"}).addClass("hidden"); 
-
+        "background-position": "center", "border": "3px double #F23333"}).addClass("hidden");
+//
         $(cardContainer2).append(frontCard2);
         $(cardContainer2).append(backCard2);
         $(".main").append(cardContainer2);
@@ -84,12 +113,101 @@ function handleCardClicked(event){
     }
 }
 
+function appendCharacter(card){
+    var endStr = card.search(".jpg");
+    var heroGif = card.substring(104, endStr);
+
+    switch(heroGif){
+        case 'batman3':
+            console.log("sticker: ", heroGif);
+            $(".hero-container").addClass("batman-gif");
+            setTimeout(() => {
+                $(".hero-container").removeClass("batman-gif");
+            }, 2000);
+            break; 
+
+        case 'captAmer':
+            console.log("sticker: ", heroGif);
+            $(".hero-container").addClass("captainAmer-gif");
+            setTimeout(() => {
+                $(".hero-container").removeClass("captainAmer-gif");
+            }, 2000);
+            break;       
+
+        case 'deadpool':
+            console.log("sticker: ", heroGif);
+            $(".hero-container").addClass("deadpool-gif");
+            setTimeout(() => {
+                $(".hero-container").removeClass("deadpool-gif");
+            }, 2000);
+            break;
+
+        case 'flash':
+            console.log("sticker: ", heroGif);
+            $(".hero-container").addClass("flash-gif");
+            setTimeout(() => {
+                $(".hero-container").removeClass("flash-gif");
+            }, 2000);
+            break;  
+
+        case 'aquaman':
+            console.log("sticker: ", heroGif);
+            $(".hero-container").addClass("aquaman-gif");
+            setTimeout(() => {
+                $(".hero-container").removeClass("aquaman-gif");
+            }, 2000);
+            break;
+
+        case 'iron_Man':
+            console.log("sticker: ", heroGif);
+            $(".hero-container").addClass("ironman-gif");
+            setTimeout(() => {
+                $(".hero-container").removeClass("ironman-gif");
+            }, 2000);
+            break;      
+
+        case 'spiderman2':
+            console.log("sticker: ", heroGif);
+            $(".hero-container").addClass("spiderman-gif");
+            setTimeout(() => {
+                $(".hero-container").removeClass("spiderman-gif");
+            }, 2000);
+            break;    
+
+        case 'superman3':
+            console.log("sticker: ", heroGif);
+            $(".hero-container").addClass("superman-gif");
+            setTimeout(() => {
+                $(".hero-container").removeClass("superman-gif");
+            }, 2000);
+            break;     
+
+        case 'wolverine':
+            console.log("sticker: ", heroGif);
+            $(".hero-container").addClass("wolverine-gif");
+            setTimeout(() => {
+                $(".hero-container").removeClass("wolverine-gif");
+            }, 2000);
+            break;
+
+        default:
+            console.log("default: ", heroGif);
+            $(".hero-container").addClass("batman-gif");
+            setTimeout(() => {
+                $(".hero-container").removeClass("batman-gif");
+            }, 2000); 
+    }
+};
+
+
+
 function winCondition(firstCardClicked, secondCardClicked){
     isClicked = false;
     attempts++;
     if(firstCardClicked === secondCardClicked) {
         console.log("it matched")
         matches++;
+        appendCharacter(firstCardClicked);
         firstCardClicked = null;
         secondCardClicked = null;
         card1 = null;
@@ -122,7 +240,9 @@ function handleAverage(){
 }
 
 function finishGame(){
-    if(matches === 9){
-    $('.section1').append('<span class="modal">You\'ve Won!</span>');
+    console.log("number of matches: ", matches);
+    if(matches === 2){
+        gamesPlayed ++;
+        $('a').text(gamesPlayed);
     }
 }

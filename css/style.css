@@ -23,7 +23,7 @@ body{
 
 .box.col-xl-9 {
     height: 86.5vh;
-    padding:0;
+    padding:2%;
     /* border: 1px solid; */
     /* background-color: rgb(35, 36, 33); */
 }
@@ -57,8 +57,55 @@ body{
 }
 
 .hero-container {
-    padding:39%;
-    margin-top: 30%;
+    padding:41%;
+    margin-top: 38%;
     background-color: azure;
 }
 
+.batman-gif {
+    background-image: url('../images/batman.gif');
+    background-size: cover;
+    background-position: center;
+}
+
+.deadpool-gif {
+    background-image: url('../images/deadpool2.gif');
+    background-size: cover;
+    background-position: center;
+}
+
+.ironman-gif {
+    background-image: url('../images/ironman.gif');
+    background-size: cover;
+    background-position: center;
+}
+.captainAmer-gif {
+    background-image: url('../images/captainAmer.gif');
+    background-size: cover;
+    background-position: center;
+}
+.flash-gif {
+    background-image: url('../images/flash.gif');
+    background-size: cover;
+    background-position: center;
+}
+.spiderman-gif {
+    background-image: url('../images/spiderman.gif');
+    background-size: cover;
+    background-position: center;
+}
+.superman-gif {
+    background-image: url('../images/superman.gif');
+    background-size: cover;
+    background-position: center;
+}
+.aquaman-gif {
+    background-image: url('../images/aquaman.gif');
+    background-size: cover;
+    background-position: center;
+}
+.wolverine-gif {
+    background-image: url('../images/wolverine.gif');
+    background-size: cover;
+    background-position: center;
+}
