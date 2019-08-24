@@ -1,7 +1,10 @@
 body{
     overflow: hidden;
-    height: 100vh;
-    background-image: linear-gradient(white, #F26419);
+    height: 100vh;  
+    /* background-image: linear-gradient(to right, red,orange,yellow,green,blue,indigo,violet);  */
+    background-image: radial-gradient(red, yellow, green);
+
+    /* background-image: linear-gradient(white, #2F4858); */
 }
 
 .front {
@@ -12,14 +15,10 @@ body{
     border: 3px outset #F23333;
 }
 
-.col-xl-3 {
-    background-image: url("../images/hero-container.gif"); 
-}
-
 .front:hover {
-    width: 250px;
+    width: 450px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    text-align: center;}
+}
 
 .page {
     height:100vh;
@@ -53,14 +52,15 @@ body{
 .side-container {
     padding: 10%;
     margin-top: 13%;
-    background-color: azure;
+    /* background-color: azure; */
+    background-image: linear-gradient(to right, rgba(255,0,0,0), #E36414);
+
 }
 
 .hero-container {
     padding:45%;
     margin-top: 37%;
     margin-left:4%;
-    background-image: url('../images/hero-container.gif')
 }
 
 .batman-gif {
@@ -119,4 +119,12 @@ body{
     background-image: url('../images/default.gif');
     background-size: cover;
     background-position: center;
+}
+
+.zoom {
+    transition: transform .2s;
+}
+
+.zoom:hover {
+    transform: scale(1.1);
 }
