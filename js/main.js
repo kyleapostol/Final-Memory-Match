@@ -19,8 +19,14 @@ var isClicked = true;
 $(document).ready(initialize);
 function initialize(){
     $('.main').ready(createCards);
-    $('shuffle-btn').ready(handleShuffleBtn);
-    $('reset-btn').ready(handleReset);
+    $('.shuffle-btn').ready(handleShuffleBtn);
+    $('.reset-btn').ready(handleReset);
+    $(".front").ready(soundEffects);
+}
+
+function soundEffects() {
+    $(".front").click(()=>{$("<audio></audio>").append($("source")).attr("src", "audio/adriant_glass.mp3");})
+    
 }
 
 function shuffle(arr) {
@@ -30,6 +36,7 @@ function shuffle(arr) {
     }
     return arr;
 }
+
 function handleReset(){
     $(".reset-btn").click(()=>{
         avg = 0;
@@ -63,7 +70,7 @@ function createCards(){
         duplicateCard = i;
 
         var cardContainer = $("<div></div>").addClass("card-container card").click(handleCardClicked);
-        var frontCard = $("<div></div>").addClass("front col-sm");
+        var frontCard = $("<div></div>").addClass("front zoom col-sm");
         var backCard = $("<div></div>").addClass("col-sm");
 
         $(backCard).css({"background-image": "url(../images/"  + cardArr[i] + ")", "background-size": "cover",
@@ -73,7 +80,7 @@ function createCards(){
         $(".main").append(cardContainer);
         
         var cardContainer2 = $("<div></div>").addClass("card-container card").click(handleCardClicked);
-        var frontCard2 = $("<div></div>").addClass("front col-sm");
+        var frontCard2 = $("<div></div>").addClass("front zoom col-sm");
         var backCard2 = $("<div></div>").addClass("col-sm");
         
         $(backCard2).css({"background-image": "url(../images/"  + cardArrCopy[duplicateCard] + ")", "background-size": "cover",
