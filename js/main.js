@@ -21,12 +21,14 @@ function initialize(){
     $('.main').ready(createCards);
     $('.shuffle-btn').ready(handleShuffleBtn);
     $('.reset-btn').ready(handleReset);
-    $(".front").ready(soundEffects);
 }
 
-function soundEffects() {
-    $(".front").click(()=>{$("<audio></audio>").append($("source")).attr("src", "audio/adriant_glass.mp3");})
-    
+function createSound() {
+    console.log('create sound ran');
+    var audioElement = $("<audio autoplay></audio>")
+    var audioSource = $("<source>").attr("src", "audio/adriantnt_glass.mp3");
+    var cardSound = $(audioElement).append(audioSource);
+    $('.col-sm').append(cardSound);
 }
 
 function shuffle(arr) {
@@ -58,10 +60,6 @@ function handleShuffleBtn(){
     });
 }
 
-function addHeroSticker(){
-    $(".hero-container").addClass("hero-image");
-}
-
 function createCards(){    
     shuffle(cardArr); 
     shuffle(cardArrCopy);
@@ -70,7 +68,7 @@ function createCards(){
         duplicateCard = i;
 
         var cardContainer = $("<div></div>").addClass("card-container card").click(handleCardClicked);
-        var frontCard = $("<div></div>").addClass("front zoom col-sm");
+        var frontCard = $("<div></div>").addClass("front zoom col-sm").click(createSound);
         var backCard = $("<div></div>").addClass("col-sm");
 
         $(backCard).css({"background-image": "url(../images/"  + cardArr[i] + ")", "background-size": "cover",
@@ -80,7 +78,7 @@ function createCards(){
         $(".main").append(cardContainer);
         
         var cardContainer2 = $("<div></div>").addClass("card-container card").click(handleCardClicked);
-        var frontCard2 = $("<div></div>").addClass("front zoom col-sm");
+        var frontCard2 = $("<div></div>").addClass("front zoom col-sm").click(createSound);
         var backCard2 = $("<div></div>").addClass("col-sm");
         
         $(backCard2).css({"background-image": "url(../images/"  + cardArrCopy[duplicateCard] + ")", "background-size": "cover",
@@ -116,7 +114,8 @@ function handleCardClicked(event){
 
 function appendCharacter(card){
     var endStr = card.search(".jpg");
-    var heroGif = card.substring(104, endStr);
+    var heroGif = card.substring(109, endStr);
+    console.log('heroGif: ', heroGif);
 
     switch(heroGif){
         case 'batman3':
