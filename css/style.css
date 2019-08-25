@@ -1,9 +1,10 @@
 body{
+    background-image: url('../images/background4.jpg');
+    background-size: cover;
     overflow: hidden;
     height: 100vh;  
     /* background-image: linear-gradient(to right, red,orange,yellow,green,blue,indigo,violet);  */
-    background-image: radial-gradient(red, yellow, green);
-
+    /* background-image: radial-gradient(red, yellow, green); */
     /* background-image: linear-gradient(white, #2F4858); */
 }
 
@@ -31,7 +32,7 @@ body{
 
 .header {
     height: 100px;
-    background-image: url('../images/logo.png');
+    /* background-image: url('../images/logo.png'); */
     background-position: center;
     background-repeat: no-repeat;
 }
@@ -50,11 +51,10 @@ body{
 }
 
 .side-container {
+    text-align: center;
     padding: 10%;
-    margin-top: 13%;
-    /* background-color: azure; */
-    background-image: linear-gradient(to right, rgba(255,0,0,0), #E36414);
-
+    margin-top: 21%;
+    background-image: linear-gradient(to right, rgba(255,0,0,0), rgb(20, 110, 227));
 }
 
 .hero-container {
@@ -127,4 +127,14 @@ body{
 
 .zoom:hover {
     transform: scale(1.1);
+}
+
+.modal {
+    position: fixed;
+    display: block;
+    left: 33rem;
+    width: 50%;
+    height: 50%;
+    background-color: aqua;
+    margin: 16% auto; /* 15% from the top and centered*/
 }
