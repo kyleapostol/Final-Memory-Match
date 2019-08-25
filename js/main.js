@@ -24,11 +24,11 @@ function initialize(){
 }
 
 function createSound() {
-    console.log('create sound ran');
-    var audioElement = $("<audio autoplay></audio>")
-    var audioSource = $("<source>").attr("src", "audio/adriantnt_glass.mp3");
-    var cardSound = $(audioElement).append(audioSource);
-    $('.col-sm').append(cardSound);
+        var audioElement = $("<audio autoplay></audio>")
+        var audioSource = $("<source>").attr("src", "audio/adriantnt_glass.mp3");
+        var cardSound = $(audioElement).append(audioSource);
+        $('.main').append(cardSound);
+        setTimeout(() => { $(audioElement).remove()}, 500);
 }
 
 function shuffle(arr) {
@@ -93,17 +93,17 @@ function handleCardClicked(event){
     if(isClicked){
         $(event.currentTarget.childNodes[0]).addClass('hidden');
         frontCard = $(event.currentTarget.childNodes[1]).removeClass('hidden');
-        $(frontCard).click(event=>{event.stopImmediatePropagation()});
+        $(frontCard).click(event => {event.stopImmediatePropagation()});
         
-        if(firstCardClicked === null) {
+        if( firstCardClicked === null ) {
             firstCardClicked = event.currentTarget.innerHTML;            
-
+            console.log("firstCardClicked: ", firstCardClicked);
             card1 = $(event.currentTarget.childNodes[0]);
             flippedCard = $(event.currentTarget.childNodes[1]);
             return firstCardClicked;
         } else {
             secondCardClicked = event.currentTarget.innerHTML;            
-
+            console.log("secondCardClicked: ", secondCardClicked);
             card2 = $(event.currentTarget.childNodes[0]);
             flippedCard2 = $(event.currentTarget.childNodes[1]);
             winCondition(firstCardClicked, secondCardClicked);
@@ -226,8 +226,13 @@ function handleAverage(){
 }
 
 function finishGame(){
-    if(matches === 2){
+    console.log("num Matches: ", matches);
+    if(matches === 2) {
         gamesPlayed ++;
         $('a').text(gamesPlayed);
+        var modal = $("<div></div>").addClass('modal').text("You\'ve Won");
+        var playAgainBtn = $("<button type='button'></button>").text("Play Again").addClass("btn btn-success");
+        $(modal).append(playAgainBtn);
+        $(".main").append(modal);
     }
 }
