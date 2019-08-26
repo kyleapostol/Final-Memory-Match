@@ -1,11 +1,15 @@
-body{
+body {
     background-image: url('../images/background4.jpg');
     background-size: cover;
     overflow: hidden;
     height: 100vh;  
-    /* background-image: linear-gradient(to right, red,orange,yellow,green,blue,indigo,violet);  */
-    /* background-image: radial-gradient(red, yellow, green); */
-    /* background-image: linear-gradient(white, #2F4858); */
+}
+
+.header {
+    font-family: "Time New Roman", Times;
+    text-align: center;
+    font-size: 5em;
+    text-shadow: #EEEE00 0 0 10px, #FF0000 5px 5px 5px;
 }
 
 .front {
@@ -30,13 +34,6 @@ body{
     padding:2%;
 }
 
-.header {
-    height: 100px;
-    /* background-image: url('../images/logo.png'); */
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
 .card {
     width: 15%;
     height: 26%;
@@ -52,6 +49,8 @@ body{
 
 .side-container {
     text-align: center;
+    font-size: 1.1em;
+    color:beige;
     padding: 10%;
     margin-top: 21%;
     background-image: linear-gradient(to right, rgba(255,0,0,0), rgb(20, 110, 227));
@@ -130,11 +129,14 @@ body{
 }
 
 .modal {
+    text-align: center;
     position: fixed;
     display: block;
-    left: 33rem;
-    width: 50%;
-    height: 50%;
-    background-color: aqua;
+    left: 22rem;
+    width: 60%;
+    height: 60%;
     margin: 16% auto; /* 15% from the top and centered*/
+    background-image: url("../images/modal-end.png");
+    background-size: cover;
+    background-position: center;
 }
