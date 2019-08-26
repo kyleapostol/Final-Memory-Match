@@ -22,6 +22,7 @@ function initialize(){
     $('.shuffle-btn').ready(handleShuffleBtn);
     $('.reset-btn').ready(handleReset);
     $('.main').ready(playAgainBtn);
+    $('.landing-modal').ready(toggle);
 }
 
 function createSound() {
@@ -38,7 +39,14 @@ function playAgainBtn(event) {
         shuffle(cardArr);
         $(".main").empty();
         createCards();
-    });
+    })
+}
+
+function toggle(){
+    console.log("toggle ran");
+    $(".toggle").click(()=>{
+        $(".landing-modal").addClass("hidden");
+    })
 }
 
 function shuffle(arr) {
