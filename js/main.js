@@ -21,6 +21,7 @@ function initialize(){
     $('.main').ready(createCards);
     $('.shuffle-btn').ready(handleShuffleBtn);
     $('.reset-btn').ready(handleReset);
+    $('.main').ready(playAgainBtn);
 }
 
 function createSound() {
@@ -29,6 +30,15 @@ function createSound() {
         var cardSound = $(audioElement).append(audioSource);
         $('.main').append(cardSound);
         setTimeout(() => { $(audioElement).remove()}, 500);
+}
+
+function playAgainBtn(event) {
+    console.log("play again ran: ", event);
+    $(".play-btn").click(()=>{
+        shuffle(cardArr);
+        $(".main").empty();
+        createCards();
+    });
 }
 
 function shuffle(arr) {
@@ -46,7 +56,7 @@ function handleReset(){
         $('a').text(avg);
         shuffle(cardArr);
         $(".main").empty();
-        createCards()
+        createCards();
     });
 }
 
@@ -72,7 +82,7 @@ function createCards(){
         var backCard = $("<div></div>").addClass("col-sm");
 
         $(backCard).css({"background-image": "url(../images/"  + cardArr[i] + ")", "background-size": "cover",
-        "background-position": "center", "border": "3px groove red"}).addClass("hidden");
+        "background-position": "center", "border": "3px groove red"}).addClass("hidden"); 
         $(cardContainer).append(frontCard);
         $(cardContainer).append(backCard);
         $(".main").append(cardContainer);
@@ -97,13 +107,11 @@ function handleCardClicked(event){
         
         if( firstCardClicked === null ) {
             firstCardClicked = event.currentTarget.innerHTML;            
-            console.log("firstCardClicked: ", firstCardClicked);
             card1 = $(event.currentTarget.childNodes[0]);
             flippedCard = $(event.currentTarget.childNodes[1]);
             return firstCardClicked;
         } else {
             secondCardClicked = event.currentTarget.innerHTML;            
-            console.log("secondCardClicked: ", secondCardClicked);
             card2 = $(event.currentTarget.childNodes[0]);
             flippedCard2 = $(event.currentTarget.childNodes[1]);
             winCondition(firstCardClicked, secondCardClicked);
@@ -231,8 +239,10 @@ function finishGame(){
         gamesPlayed ++;
         $('a').text(gamesPlayed);
         var modal = $("<div></div>").addClass('modal').text("You\'ve Won");
-        var playAgainBtn = $("<button type='button'></button>").text("Play Again").addClass("btn btn-success");
+        var playAgainBtn = $("<button type='button'></button>").text("Play Again").addClass("btn btn-success play-btn");
+        $(playAgainBtn).css({ "margin-left" : "32%", "margin-top" : "10%" });
+        $(playAgainBtn).click(playAgainBtn);
         $(modal).append(playAgainBtn);
-        $(".main").append(modal);
+        $(".main").append(modal); 
     }
 }
