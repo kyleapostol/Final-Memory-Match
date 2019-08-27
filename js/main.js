@@ -17,12 +17,13 @@ var flippedCard, flippedCard2 = null;
 var isClicked = true;
 
 $(document).ready(initialize);
+
 function initialize(){
-    $('.main').ready(createCards);
-    $('.shuffle-btn').ready(handleShuffleBtn);
-    $('.reset-btn').ready(handleReset);
-    $('.main').ready(playAgainBtn);
-    $('.landing-modal').ready(toggle);
+    createCards()
+    $('.shuffle-btn').click(handleShuffleBtn);
+    $('.reset-btn').click(handleReset);
+    $('.play-btn').click(playAgainBtn);
+    $('.landing-modal').click(toggle);
 }
 
 function createSound() {
@@ -33,20 +34,16 @@ function createSound() {
         setTimeout(() => { $(audioElement).remove()}, 500);
 }
 
-function playAgainBtn(event) {
-    console.log("play again ran: ", event);
-    $(".play-btn").click(()=>{
-        shuffle(cardArr);
-        $(".main").empty();
-        createCards();
-    })
+function playAgainBtn() {
+    console.log("playAgain ran")
+    $(modal).addClass('hidden');
+    shuffle(cardArr);
+    $(".main").empty();
+    createCards();
 }
 
 function toggle(){
-    console.log("toggle ran");
-    $(".toggle").click(()=>{
-        $(".landing-modal").addClass("hidden");
-    })
+    $(".landing-modal").addClass("hidden");
 }
 
 function shuffle(arr) {
@@ -58,24 +55,21 @@ function shuffle(arr) {
 }
 
 function handleReset(){
-    $(".reset-btn").click(()=>{
-        avg = 0;
-        $('span').text(avg);
-        $('a').text(avg);
-        shuffle(cardArr);
-        $(".main").empty();
-        createCards();
-    });
+    avg = 0;
+    matches = 0;
+    $('span').text(avg);
+    $('a').text(avg);
+    shuffle(cardArr);
+    $(".main").empty();
+    createCards();
 }
 
 function handleShuffleBtn(){
-    $(".shuffle-btn").click(()=>{
-        gamesPlayed ++;
-        $('a').text(gamesPlayed);
-        shuffle(cardArr);
-        $(".main").empty();
-        createCards()
-    });
+    gamesPlayed ++;
+    $('a').text(gamesPlayed);
+    shuffle(cardArr);
+    $(".main").empty();
+    createCards()
 }
 
 function createCards(){    
@@ -242,15 +236,16 @@ function handleAverage(){
 }
 
 function finishGame(){
-    console.log("num Matches: ", matches);
     if(matches === 2) {
         gamesPlayed ++;
         $('a').text(gamesPlayed);
-        var modal = $("<div></div>").addClass('modal').text("You\'ve Won");
-        var playAgainBtn = $("<button type='button'></button>").text("Play Again").addClass("btn btn-success play-btn");
-        $(playAgainBtn).css({ "margin-left" : "32%", "margin-top" : "10%" });
+        var modal = $("<div></div>").addClass('modal');
+        var text = $("<div>You\'ve Won!</div>").addClass('modal-text');
+        $(modal).append(text);
+        var playAgainBtn = $("<button type='button'></button>").text("Play Again").addClass("btn btn-success play-btn justify-content-center");
         $(playAgainBtn).click(playAgainBtn);
         $(modal).append(playAgainBtn);
-        $(".main").append(modal); 
+        $("body").addClass("main-opacity");
+        $("body").append(modal); 
     }
 }

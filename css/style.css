@@ -23,7 +23,6 @@ body {
 }
 .toggle{
     box-shadow:20px 20px 40px 10px pink;  
-
 }
 .header {
     font-family: "Time New Roman", Times;
@@ -168,3 +167,12 @@ body {
     background-size: cover;
     background-position: center;
 }
+
+.modal-text {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 5em;
+}
+
+/* .main-opacity {
+    opacity: .5;
+} */
