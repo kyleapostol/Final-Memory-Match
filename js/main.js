@@ -22,21 +22,22 @@ function initialize(){
     createCards()
     $('.shuffle-btn').click(handleShuffleBtn);
     $('.reset-btn').click(handleReset);
-    $('.play-btn').click(playAgainBtn);
     $('.landing-modal').click(toggle);
+    $('.play-btn').click(playAgainBtn);
 }
 
 function createSound() {
-        var audioElement = $("<audio autoplay></audio>")
-        var audioSource = $("<source>").attr("src", "audio/adriantnt_glass.mp3");
-        var cardSound = $(audioElement).append(audioSource);
-        $('.main').append(cardSound);
-        setTimeout(() => { $(audioElement).remove()}, 500);
+    var audioElement = $("<audio autoplay></audio>")
+    var audioSource = $("<source>").attr("src", "audio/adriantnt_glass.mp3");
+    var cardSound = $(audioElement).append(audioSource);
+    $('.main').append(cardSound);
+    setTimeout(() => { $(audioElement).remove()}, 500);
 }
 
 function playAgainBtn() {
+    matches = 0;
     console.log("playAgain ran")
-    $(modal).addClass('hidden');
+    $(".modal").css("display", '');
     shuffle(cardArr);
     $(".main").empty();
     createCards();
@@ -84,17 +85,19 @@ function createCards(){
         var backCard = $("<div></div>").addClass("col-sm");
 
         $(backCard).css({"background-image": "url(../images/"  + cardArr[i] + ")", "background-size": "cover",
-        "background-position": "center", "border": "3px groove red"}).addClass("hidden"); 
+        "background-position": "center", "border": "3px groove red"}).addClass("hidden");;
+
         $(cardContainer).append(frontCard);
         $(cardContainer).append(backCard);
         $(".main").append(cardContainer);
-        
+    
         var cardContainer2 = $("<div></div>").addClass("card-container card").click(handleCardClicked);
         var frontCard2 = $("<div></div>").addClass("front zoom col-sm").click(createSound);
         var backCard2 = $("<div></div>").addClass("col-sm");
         
         $(backCard2).css({"background-image": "url(../images/"  + cardArrCopy[duplicateCard] + ")", "background-size": "cover",
-        "background-position": "center", "border": "3px groove red"}).addClass("hidden");
+        "background-position": "center", "border": "3px groove red"}).addClass("hidden");;
+       
         $(cardContainer2).append(frontCard2);
         $(cardContainer2).append(backCard2);
         $(".main").append(cardContainer2);
@@ -108,12 +111,14 @@ function handleCardClicked(event){
         $(frontCard).click(event => {event.stopImmediatePropagation()});
         
         if( firstCardClicked === null ) {
-            firstCardClicked = event.currentTarget.innerHTML;            
+            firstCardClicked = event.currentTarget.innerHTML; 
+            console.log("firstCardClicked: ", firstCardClicked);
             card1 = $(event.currentTarget.childNodes[0]);
             flippedCard = $(event.currentTarget.childNodes[1]);
             return firstCardClicked;
         } else {
-            secondCardClicked = event.currentTarget.innerHTML;            
+            secondCardClicked = event.currentTarget.innerHTML;   
+            console.log("secondCardClicked: ", secondCardClicked);         
             card2 = $(event.currentTarget.childNodes[0]);
             flippedCard2 = $(event.currentTarget.childNodes[1]);
             winCondition(firstCardClicked, secondCardClicked);
@@ -125,7 +130,6 @@ function handleCardClicked(event){
 function appendCharacter(card){
     var endStr = card.search(".jpg");
     var heroGif = card.substring(109, endStr);
-    console.log('heroGif: ', heroGif);
 
     switch(heroGif){
         case 'batman3':
@@ -237,15 +241,18 @@ function handleAverage(){
 
 function finishGame(){
     if(matches === 2) {
+        console.log("finishGame ran");
         gamesPlayed ++;
         $('a').text(gamesPlayed);
-        var modal = $("<div></div>").addClass('modal');
-        var text = $("<div>You\'ve Won!</div>").addClass('modal-text');
-        $(modal).append(text);
-        var playAgainBtn = $("<button type='button'></button>").text("Play Again").addClass("btn btn-success play-btn justify-content-center");
-        $(playAgainBtn).click(playAgainBtn);
-        $(modal).append(playAgainBtn);
-        $("body").addClass("main-opacity");
-        $("body").append(modal); 
+        var modal = $("<div></div>").addClass('modal').css({"display" : "block"});
+        var modalMessage = $("<div>You\'ve Won!</div>").addClass('modal-text');
+        var modalBtn = $("<button type='button'></button>").text("Play Again").addClass("btn play-btn btn-success justify-content-center");
+
+        $(modal).append(modalMessage);
+        $(modal).append(modalBtn).click(playAgainBtn);
+        $("body").append(modal);         
+
+        // var finishModal = $(modal).append(playModalBtn);
+        // $("body").addClass("main-opacity");
     }
 }
