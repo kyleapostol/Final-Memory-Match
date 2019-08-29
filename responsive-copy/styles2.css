@@ -1,0 +1,34 @@
+.header {
+    background-color: blueviolet;
+    border: 1px solid black;
+} 
+
+.box {
+    background-color: aqua;
+    border: 1px solid black;
+}
+
+.side-container {
+    background-color:tomato;
+    border: 1px solid black;
+}
+
+.main {
+    background-color: bisque;
+    border: 1px solid black;
+    height:125vw;
+}
+
+.hero-container {
+    background-color: limegreen;
+    height: 50vw;   
+    border: 1px solid black;
+}
+.shuffle-btn {
+    background-color: greenyellow;
+}
+
+.reset-btn {
+    background-color: plum;
+}
+
