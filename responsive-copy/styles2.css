@@ -1,3 +1,6 @@
+.page {
+    overflow: hidden;
+}
 .header {
     background-color: blueviolet;
     border: 1px solid black;
@@ -32,3 +35,25 @@
     background-color: plum;
 }
 
+@media only screen 
+  and (min-device-width: 375px) 
+  /* and (max-device-width: 812px) 
+  and (-webkit-min-device-pixel-ratio: 3) */
+  and (orientation: landscape) { 
+    .box {
+      width: 30vh;
+    }
+
+    .hero-container {
+        width: 30vh;
+        height: 39.4vh;
+    }
+    
+    .main {
+        position:absolute;
+        height:87%;
+        width: 86%;
+        left:13.9%;
+        top:13%;
+    }
+}
