@@ -19,12 +19,12 @@
 .main {
     background-color: bisque;
     border: 1px solid black;
-    height:125vw;
+    height:145vw;
 }
 
 .hero-container {
     background-color: limegreen;
-    height: 50vw;   
+    height: 30vw;   
     border: 1px solid black;
 }
 .shuffle-btn {
@@ -33,6 +33,16 @@
 
 .reset-btn {
     background-color: plum;
+}
+
+.card-container {
+    width:31%;
+    height: 14.5%;
+    background-color: chartreuse;
+    display: inline-flex;
+    flex-wrap: wrap;
+    margin-top: 3%;
+    margin-left: 1%;
 }
 
 @media only screen 
@@ -55,5 +65,9 @@
         width: 86%;
         left:13.9%;
         top:13%;
+    }
+    .card-container{
+        width: 15%;
+        height: 25.5%;
     }
 }
