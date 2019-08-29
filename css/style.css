@@ -39,11 +39,11 @@ body {
     margin-left: 44%;
 }
 
-@media( min-width: 647px) {
+/* @media( min-width: 647px) {
     .btn-lg {
         margin-left: 40%;
     }
-} 
+}  */
 
 .front {
     background-image: url('../images/cardlogo2.jpg!d');
