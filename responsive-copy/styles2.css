@@ -48,7 +48,183 @@ div.extra-container.row {
     margin-top: 3%;
     margin-left: 1%;
 }
+/* desktop */
+@media screen 
+  and (min-device-width: 1200px) 
+  and (max-device-width: 1600px) 
+  and (-webkit-min-device-pixel-ratio: 1) {
+    .header {
+        height: 6vw;
+    }
 
+    .box {
+        width:20%;
+        height: 44vh;
+    }
+
+    .hero-container {
+        width:20%;
+        height: 44vh;
+    }
+
+    .side-container {
+        margin-left:14px;
+        padding:8%;
+        margin-top:19%;
+    }
+
+    div.extra-container.row {
+        display: initial;
+    }
+    
+    .card-row {
+        position: absolute;
+        left: 20%;
+        top:10.9%;
+        width: 81vw;
+    }
+
+    .card-container {
+        width: 15%;
+        height:23.5%;
+        top:13%;
+        margin-top: 5%;
+        margin-left: 14px;
+    }
+
+    .main {
+        height: 48.8vw;
+    } 
+      
+}
+
+
+    /* ipad */
+@media only screen 
+and (min-device-width: 768px) 
+and (max-device-width: 1024px) 
+and (orientation: portrait) 
+and (-webkit-min-device-pixel-ratio: 2) {
+    .main {
+        height: 113.2vw;
+    }
+
+    .card-container {
+        width: 30%;
+        height: 13.5%;
+        margin-left: 2%;
+    }
+}
+
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (orientation: landscape) 
+  and (-webkit-min-device-pixel-ratio: 2) {
+    .header{
+        height: 10vw;
+    }
+
+    .box {
+        width:25%;
+        height: 42.6vh;
+      }
+
+    .hero-container {
+        width:25%;
+        height: 42.7vh;
+      }
+
+    .side-container {
+        margin-left:14px;
+        margin-top:20px;
+        padding: 4px;
+      }
+
+      div.extra-container.row {
+        display: initial;
+      }
+      
+      .card-row {
+        position: absolute;
+        left: 25%;
+        top:13.5%;
+        width: 76.5vw;
+      }
+
+      .card-container {
+        width: 15%;
+        height:26.5%;
+        margin-top:4%;
+      }
+      .main {
+        height: 65vw;
+      }
+}
+/* iphone x */
+@media only screen 
+  and (min-device-width: 375px)
+  and (max-device-width: 812px) 
+  and (-webkit-min-device-pixel-ratio: 3)
+  and (orientation: landscape) {
+    .header {
+        height: 6vw;
+    }
+
+    .box {
+        width:20%;
+        height: 43vh;
+    }
+
+    .hero-container {
+        width:20%;
+        height: 41.5vh;
+    }
+
+    .side-container {
+        margin-left:14px;
+        padding: 0px;
+    }
+
+    div.extra-container.row {
+        display: initial;
+    }
+    
+    .card-row {
+        position: absolute;
+        left: 20%;
+        top:13%;
+        width: 81.9vw;
+    }
+
+    .card-container {
+        width: 15%;
+        height:23.5%;
+        top:13%;
+        margin-top: 4%;
+        margin-left: 7px;
+    }
+
+    .main {
+        height: 40.2vw;
+    }
+}
+
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 812px) 
+  and (-webkit-min-device-pixel-ratio: 3)
+  and (orientation: portrait) { 
+      .main {
+        height: 174.5vw;
+      }
+
+      .card-container {
+          margin-top:4%;
+          margin-left: 5px;
+      }
+}
+/* iphone 6,7,8 */
 @media only screen 
   and (min-device-width: 375px) 
   and (max-device-width: 667px) 
@@ -62,89 +238,26 @@ div.extra-container.row {
         width: 15%;
         height: 29.5%;
         margin-top: 1%;
+        margin-left: 7px;
     }
 }
 
-@media only screen 
-  and (min-device-width: 375px) 
-  and (max-device-width: 812px) 
-  and (-webkit-min-device-pixel-ratio: 3)
-  and (orientation: portrait) { 
-      .main {
-        height: 175.5vw;
-      }
-}
 
-@media only screen 
-  and (min-device-width: 375px) 
-  and (max-device-width: 812px) 
-  and (-webkit-min-device-pixel-ratio: 3)
-  and (orientation: landscape) {
-       .box {
-          width:20%;
-          height: 43vh;
-        }
 
-        .hero-container {
-            width:20%;
-            height: 41.5vh;
-        }
 
-        .side-container {
-            margin-left:14px;
-            padding: 4px;
-        }
 
-        div.extra-container.row {
-            display: initial;
-        }
-        
-        .card-row {
-            position: absolute;
-            left: 20%;
-            top:13%;
-            width: 81.9vw;
-        }
 
-        .card-container {
-            width: 15%;
-            height:26.5%;
-            top:13%;
-        }
-        .main {
-            height: 40.2vw;
-        }
-}
 
-@media only screen 
-  and (min-device-width: 768px) 
-  and (max-device-width: 1024px) 
-  and (orientation: portrait) 
-  and (-webkit-min-device-pixel-ratio: 2) {
-    .main {
-        height: 113.2vw;
-    }
-    .card-container {
-        width: 30%;
-        height: 13.5%;
-        margin-left: 2%;
-    }
-}
 
-@media only screen 
-  and (min-device-width: 768px) 
-  and (max-device-width: 1024px) 
-  and (orientation: landscape) 
-  and (-webkit-min-device-pixel-ratio: 2) {
-    .main {
-        height: 60vw;
+
+/* redo landscape to mimic desktop view */   
+
+/* .main {
+        height: 40.2vw;
     }
 
     .card-container {
-        width: 15%;
+        width: 14%;
         height: 26.5%;
         margin-left: 12px;
     }
-}
-
-/* redo landscape to mimic desktop view */
