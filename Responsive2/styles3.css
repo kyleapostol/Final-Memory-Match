@@ -1,0 +1,104 @@
+body {
+    margin:0;
+}
+.header {
+    background-color: purple;
+    width: 100%;
+    height: 10vh;
+}
+.bottom-half {
+    display:flex;
+    height:90vh;
+}
+.aside {
+    height: 90vh;
+    width: 25%;
+    background-color: aquamarine;
+}
+
+.stats {
+    height: 50%;
+    width: 100%;
+    background-color: antiquewhite;
+}
+
+.hero-container {
+    height: 50%;
+    width: 100%;
+    background-color: cadetblue;
+}
+
+.main {
+    height: 90vh;
+    width: 75%;
+    background-color: yellow;
+}
+
+.top-row {
+    width: 100%;
+    height: 50%;
+    background-color: violet;
+}
+
+.bottom-row {
+    width: 100%;
+    height: 50%;
+    background-color: lightskyblue;
+}
+
+.card-container {
+    width:22%;
+    height:37%;
+    background-color: chartreuse;
+    display: inline-flex;
+    flex-wrap: wrap;
+    margin-top: 3%;
+    margin-left: 2%;
+}
+/* ipad */
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (orientation: portrait) 
+  and (-webkit-min-device-pixel-ratio: 2) {
+    .card-container {
+        margin-top: 5%;
+    }
+
+}
+/* iphone 6,7,8 */
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 667px) 
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: portrait) { 
+    .header {
+        width: 100%;
+    }
+    .aside {
+        display: flex;
+        width: 100%;
+        height: 20%;
+    } 
+    .stats {
+        width:50%;
+        height: 100%;
+    }
+    .hero-container {
+        width: 50%;
+        height: 100%;
+    }
+    .main {
+        width: 100%;
+        height: 70%;
+        display: static;
+    }
+    .bottom-half{
+        width:100%;
+        height:100vh;
+        display:block;
+    }
+    .card-container {
+        margin-top:5%;
+    }
+}
