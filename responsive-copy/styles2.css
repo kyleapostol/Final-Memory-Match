@@ -52,7 +52,7 @@ div.extra-container.row {
 @media screen 
   and (min-device-width: 1200px) 
   and (max-device-width: 1600px) 
-  and (-webkit-min-device-pixel-ratio: 1) {
+  and (-webkit-min-device-pixel-ratio:1) {
     .header {
         height: 6vw;
     }
@@ -70,7 +70,6 @@ div.extra-container.row {
     .side-container {
         margin-left:14px;
         padding:8%;
-        margin-top:19%;
     }
 
     div.extra-container.row {
