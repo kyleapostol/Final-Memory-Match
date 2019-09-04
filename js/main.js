@@ -240,7 +240,7 @@ function handleAverage(){
 }
 
 function finishGame(){
-    if(matches === 2) {
+    if(matches === 9) {
         console.log("finishGame ran");
         gamesPlayed ++;
         $('a').text(gamesPlayed);

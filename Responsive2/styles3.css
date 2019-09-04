@@ -1,3 +1,7 @@
+.wrapper {
+    overflow: hidden;
+}
+
 body {
     margin:0;
 }
@@ -55,6 +59,14 @@ body {
     margin-top: 3%;
     margin-left: 2%;
 }
+
+.front {
+    background-image: url('../images/cardlogo2.jpg!d');
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+    border: 3px outset #F23333;
+}
 /* ipad */
 @media only screen 
   and (min-device-width: 768px) 
@@ -102,3 +114,4 @@ body {
         margin-top:5%;
     }
 }
+
