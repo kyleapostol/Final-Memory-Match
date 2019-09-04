@@ -53,7 +53,6 @@ body {
 .card-container {
     width:22%;
     height:37%;
-    background-color: chartreuse;
     display: inline-flex;
     flex-wrap: wrap;
     margin-top: 3%;
@@ -61,11 +60,17 @@ body {
 }
 
 .front {
+    /* background-color: yellow; */
     background-image: url('../images/cardlogo2.jpg!d');
     background-size: cover;
     background-position: center;
     cursor: pointer;
     border: 3px outset #F23333;
+    flex-grow: 1;
+}
+
+.hidden {
+    display: none;
 }
 /* ipad */
 @media only screen 

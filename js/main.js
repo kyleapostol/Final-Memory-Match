@@ -85,7 +85,7 @@ function createCards(){
         var backCard = $("<div></div>").addClass("col-sm");
 
         $(backCard).css({"background-image": "url(../images/"  + cardArr[i] + ")", "background-size": "cover",
-        "background-position": "center", "border": "3px groove red"}).addClass("hidden");;
+        "background-position": "center", "border": "3px groove red"}).addClass("hidden");
 
         $(cardContainer).append(frontCard);
         $(cardContainer).append(backCard);
@@ -96,7 +96,7 @@ function createCards(){
         var backCard2 = $("<div></div>").addClass("col-sm");
         
         $(backCard2).css({"background-image": "url(../images/"  + cardArrCopy[duplicateCard] + ")", "background-size": "cover",
-        "background-position": "center", "border": "3px groove red"}).addClass("hidden");;
+        "background-position": "center", "border": "3px groove red"}).addClass("hidden");
        
         $(cardContainer2).append(frontCard2);
         $(cardContainer2).append(backCard2);
