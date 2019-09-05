@@ -22,15 +22,34 @@ function initialize(){
 createCards();
 $('.shuffle-btn').click(handleShuffleBtn);
 $('.reset-btn').click(handleReset);
-// $('.landing-modal').click(toggle);
-// $('.play-btn').click(playAgainBtn);
+$('.landing-modal').click(toggle);
+$('.play-btn').click(playAgainBtn);
 };
+
+function createSound() {
+    var audioElement = $("<audio autoplay></audio>")
+    var audioSource = $("<source>").attr("src", "audio/adriantnt_glass.mp3");
+    var cardSound = $(audioElement).append(audioSource);
+    $('.main').append(cardSound);
+    setTimeout(() => { $(audioElement).remove()}, 500);
+}
+
 function shuffle(arr) {
     for (var i = arr.length - 1; i > 0; i--) {
         var j = Math.floor(Math.random() * (i + 1));
         [arr[i], arr[j]] = [arr[j], arr[i]];
     }
     return arr;
+}
+
+function playAgainBtn() {
+    matches = 0;
+    console.log("playAgain ran")
+    $(".modal").css("display", '');
+    shuffle(cardArr);
+    $(".top-row").empty();
+    $(".bottom-row").empty();
+    createCards();
 }
 
 function handleReset(){
@@ -53,6 +72,10 @@ function handleShuffleBtn(){
     createCards()
 }
 
+function toggle(){
+    $(".landing-modal").addClass("hidden");
+}
+
 function createCards() {
     shuffle(cardArr); 
     shuffle(cardArrCopy);
@@ -61,22 +84,22 @@ function createCards() {
         duplicateCard = i;
         
         var cardContainer =  $("<div></div>").addClass("card-container").click(handleCardClicked);
-        var frontCard = $("<div></div>").addClass('front');
+        var frontCard = $("<div></div>").addClass('front zoom').click(createSound);
         var backCard = $("<div></div>");
 
         $(backCard).css({"background-image": "url(../images/"  + cardArr[i] + ")", "background-size": "cover",
-        "background-position": "center", "border": "3px groove red", "flex-grow" : 1});
-// .addClass("hidden")
+        "background-position": "center", "border": "3px groove red", "flex-grow" : 1}).addClass("hidden");
+ 
         $(cardContainer).append(frontCard);
         $(cardContainer).append(backCard);
         $(".top-row").append(cardContainer);
 
         var cardContainer2 =  $("<div></div>").addClass("card-container").click(handleCardClicked);
-        var frontCard2 = $("<div></div>").addClass('front');
+        var frontCard2 = $("<div></div>").addClass('front zoom').click(createSound);
         var backCard2 = $("<div></div>");
 
         $(backCard2).css({"background-image": "url(../images/"  + cardArr[i] + ")", "background-size": "cover",
-        "background-position": "center", "border": "3px groove red", "flex-grow" : 1});
+        "background-position": "center", "border": "3px groove red", "flex-grow" : 1}).addClass("hidden");
 
         $(cardContainer2).append(frontCard2);
         $(cardContainer2).append(backCard2);
@@ -91,7 +114,8 @@ function handleCardClicked(event){
         $(frontCard).click(event => {event.stopImmediatePropagation()});
         
         if( firstCardClicked === null ) {
-            firstCardClicked = event.currentTarget.innerHTML; 
+            firstCardClicked = event.currentTarget.innerHTML;
+            console.log("event: ", event); 
             console.log("firstCardClicked: ", firstCardClicked);
             card1 = $(event.currentTarget.childNodes[0]);
             flippedCard = $(event.currentTarget.childNodes[1]);
@@ -242,7 +266,7 @@ function handleAverage(){
 }
 
 function finishGame(){
-    if(matches === 9) {
+    if(matches === 2) {
         console.log("finishGame ran");
         gamesPlayed ++;
         $('a').text(gamesPlayed);
@@ -252,10 +276,7 @@ function finishGame(){
 
         $(modal).append(modalMessage);
         $(modal).append(modalBtn).click(playAgainBtn);
-        $("body").append(modal);         
-
-        // var finishModal = $(modal).append(playModalBtn);
-        // $("body").addClass("main-opacity");
+        $("body").append(modal); 
     }
 }
 // function createCards(){    
