@@ -7,6 +7,7 @@ body {
     background-image: url('../images/background4.jpg');
     background-size: cover;
     height: 100vh;
+    overflow: hidden;
 }
 .header {
     width: 100%;
@@ -14,7 +15,7 @@ body {
     font-family: "Time New Roman", Times;
     text-align: center;
     font-size: 12vh;
-    text-shadow: #EEEE00 0 0 10px, #FF0000 5px 5px 5px;
+    text-shadow: #00f7ff 0 0 10px, #FF0000 5px 5px 5px;
 }
 .bottom-half {
     display:flex;
@@ -97,21 +98,32 @@ body {
 }
 
 .reset-btn {
+    cursor: pointer;
     margin-top: 23%;
     margin-bottom: 40%;
-    width: 20%;
-    height: 20%;
-    border-radius: 19%;
-    background-color: #E73E33;
+    width: 25%;
+    height: 25%;
+    border-radius: 20%;
+    background-color: #000;
+    color: red;
+}
+.reset-btn:hover {
+    background-color: rgb(55, 54, 54);
 }
 
 .shuffle-btn {
+    cursor: pointer;
     margin-top: 23%;
     margin-bottom: 40%;
-    width: 20%;
-    height: 20%;
-    border-radius: 19%;
-    background-color: #C5332A;
+    width: 25%;
+    height: 25%;
+    border-radius: 20%;
+    background-color: #000;
+    color: blue;
+}
+
+.shuffle-btn:hover {
+    background-color: rgb(55, 54, 54);
 }
 
 .hidden {
@@ -136,76 +148,110 @@ body {
 }
 
 .landing-modal {
-    overflow: hidden;
-    position: relative;
+    position: fixed;
     background-image: url("../images/landing-modal.jpg");
     background-size: cover;
     background-position: center;
     height: 100%;
+    width: 100vw
 }
 
 #title{
-    color: maroon;
-    font-size: 5.5rem;
+    color: #5d1712;
+    font-size: 20vh;
     text-align: center;
     margin-top: 6%;
-    text-shadow: #EEEE00 0 0 10px, #FF0000 5px 5px 5px;
+    text-shadow: #00f7ff 0 0 10px, #FF0000 5px 5px 5px;
 }
 
 .toggle-btn{
-    margin-left: 50%;
+    margin-top: 4%;
+    cursor: pointer;
+    margin-left: 43%;
+    width: 22vh;
+    height: 10%;
+    border-radius: 15%;
+    font-size: 6vh;
+    font-family: monospace;
+    background-color: gold;
+    border: 4px red solid;
+    box-shadow: 20px 20px 40px 10px pink;
 }
 
-.batman-gif {
+.toggle-btn:hover {
+    background-color: red;
+    border-radius: 45%;
+    color: white;
+    transition: 1.5s;    
+    font-size: 5vh;    
+    box-shadow: 20px 20px 40px 10px #fa5a75;
+}
+
+.play-btn {
+    background-color: lightgreen;
+    width: 18vh;
+    border-radius: 23%;
+    margin-top: 10vh;
+    margin-right: 3%;
+}
+
+.batman3 {
     background-image: url('../images/batman.gif');
     background-size: cover;
     background-position: center;
 }
 
-.deadpool-gif {
+.deadpool {
     background-image: url('../images/deadpool.gif');
     background-size: 50%;
     background-position: center;
     background-repeat: no-repeat;
 }
 
-.ironman-gif {
+.iron_man {
     background-image: url('../images/ironman.gif');
     background-size: cover;
     background-position: center;
 }
-.captainAmer-gif {
+.captAmer {
     background-image: url('../images/captainAmer.gif');
     background-size: cover;
     background-position: center;
 }
-.flash-gif {
+.flash {
     background-image: url('../images/flash.gif');
     background-size: 70%;
     background-position: center;
     background-repeat: no-repeat;
 }
-.spiderman-gif {
+.spiderman2 {
     background-image: url('../images/spiderman.gif');
     background-size: 70%;
     background-position: center;
     background-repeat: no-repeat;
 }
-.superman-gif {
+.superman3 {
     background-image: url('../images/superman.gif');
     background-size: 70%;
     background-position: center;
     background-repeat: no-repeat;
 }
-.aquaman-gif {
+.aquaman {
     background-image: url('../images/aquaman.gif');
     background-size: cover;
     background-position: center;
 }
-.wolverine-gif {
+.wolverine {
     background-image: url('../images/wolverine.gif');
     background-size: cover;
     background-position: center;
+}
+
+.blackPanther {
+    background-image: url('../images/blackPanther.gif');
+    background-position: center;
+    background-size: 80%;
+    background-repeat: no-repeat;
 }
 
 .default-gif {
@@ -257,9 +303,26 @@ body {
         height: 35%;
         margin-left: 13%;
     }
+
     .modal-text{
         font-size: 7vh;
     }
+
+    .shuffle-btn {
+        width: 30%;
+        height: 25%;
+    }
+
+    .reset-btn {
+        width: 30%;
+        height: 25%;
+    }
+    
+    .toggle-btn {
+        margin-top: 10%;
+        margin-left: 35%;
+    }
+
 }
 /* iphone 6,7,8 */
 @media only screen 
@@ -271,46 +334,67 @@ body {
         width: 100%;
         font-size: 3em;
     }
+
     .aside {
         display: flex;
         width: 100%;
         height: 20%;
     } 
+
     .stats {
         width:50%;
         height: 100%;
     }
+
     .hero-container {
         width: 50%;
         height: 100%;
     }
+
     .main {
         width: 100%;
         height: 70%;
         display: static;
     }
+
     .bottom-half{
         width:100%;
         height:100vh;
         display:block;
     }
+
     .card-container {
         margin-top: 4%;
     }
     .reset-btn{
         margin: 0;
     }
+
     .shuffle-btn{
         margin: 0;
     }
+
     .endModal {
         bottom: 25%;
         width: 75%;
         height: 35%;
         margin-left: 13%;
     }
+
     .modal-text{
         font-size: 7vh;
+    }
+
+    .toggle-btn {
+        margin-top: 15%;
+        margin-left: 30%;
+    }
+    
+    #title {
+        font-size: 12vh;
+    }
+    .play-btn {
+        margin-top: 1vh;
     }
 }
 
@@ -322,8 +406,18 @@ body {
       .header {
         font-size: 3em;
     }
-}
+    
+    .reset-btn {
+        width: 30%;
+    }
 
+    .shuffle-btn {
+        width: 30%;
+    }
+
+
+}
+/* iphone x */
 @media only screen 
   and (min-device-width: 375px) 
   and (max-device-width: 812px) 
@@ -338,5 +432,21 @@ body {
     .top-row {
         margin-top: 3%;
     }
+    .reset-btn {
+        width: 30%;
+    }
+
+    .shuffle-btn {
+        width: 30%;
+    }
 }
 
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 812px) 
+  and (-webkit-min-device-pixel-ratio: 3)
+  and (orientation: portrait) {
+      .toggle-btn {
+          margin-left: 25%;
+    }
+}
