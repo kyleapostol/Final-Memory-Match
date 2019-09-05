@@ -69,8 +69,120 @@ body {
     flex-grow: 1;
 }
 
+.btn-container {
+    height: 50%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.stats-container {
+    height: 50%;
+}
+
+.acc-container {
+    height: 50%;
+}
+
+.total-games {
+    height: 50%;
+}
+
+.reset-btn {
+    margin-top: 40%;
+    margin-bottom: 40%;
+}
+
+.shuffle-btn {
+    margin-top: 40%;
+    margin-bottom: 40%;
+}
+
 .hidden {
     display: none;
+}
+
+.batman-gif {
+    background-image: url('../images/batman.gif');
+    background-size: cover;
+    background-position: center;
+}
+
+.deadpool-gif {
+    background-image: url('../images/deadpool.gif');
+    background-size: 50%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.ironman-gif {
+    background-image: url('../images/ironman.gif');
+    background-size: cover;
+    background-position: center;
+}
+.captainAmer-gif {
+    background-image: url('../images/captainAmer.gif');
+    background-size: cover;
+    background-position: center;
+}
+.flash-gif {
+    background-image: url('../images/flash.gif');
+    background-size: 70%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.spiderman-gif {
+    background-image: url('../images/spiderman.gif');
+    background-size: 70%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.superman-gif {
+    background-image: url('../images/superman.gif');
+    background-size: 70%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.aquaman-gif {
+    background-image: url('../images/aquaman.gif');
+    background-size: cover;
+    background-position: center;
+}
+.wolverine-gif {
+    background-image: url('../images/wolverine.gif');
+    background-size: cover;
+    background-position: center;
+}
+
+.default-gif {
+    background-image: url('../images/default.gif');
+    background-size: cover;
+    background-position: center;
+}
+
+.zoom {
+    transition: transform .2s;
+}
+
+.zoom:hover {
+    transform: scale(1.1);
+}
+
+.modal {
+    text-align: center;
+    position: fixed;
+    /* display: block; */
+    left: 22rem;
+    width: 60%;
+    height: 60%;
+    margin: 16% auto; /* 15% from the top and centered*/
+    background-image: url("../images/modal-end.png");
+    background-size: cover;
+    background-position: center;
+}
+
+.modal-text {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 5em;
 }
 /* ipad */
 @media only screen 
