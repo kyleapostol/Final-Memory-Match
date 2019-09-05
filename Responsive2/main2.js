@@ -1,8 +1,8 @@
 var cardArr = ["batman3.jpg", "captAmer.jpg", "deadpool.jpg", "flash.jpg", "aquaman.jpg",
-             "iron_Man.jpg", "spiderman2.jpg", "superman3.jpg", "wolverine.jpg"];
+             "iron_Man.jpg", "spiderman2.jpg", "superman3.jpg", "wolverine.jpg", "wolverine.jpg"];
              
 var cardArrCopy = ["batman3.jpg", "captAmer.jpg", "deadpool.jpg", "flash.jpg", "aquaman.jpg",
-"iron_Man.jpg", "spiderman2.jpg", "superman3.jpg", "wolverine.jpg"]; 
+"iron_Man.jpg", "spiderman2.jpg", "superman3.jpg", "wolverine.jpg", "wolverine.jpg"]; 
 
 var matches = 0;
 var attempts = 0;
@@ -19,11 +19,11 @@ var isClicked = true;
 $(document).ready(initialize);
 
 function initialize(){
-createCards();
-$('.shuffle-btn').click(handleShuffleBtn);
-$('.reset-btn').click(handleReset);
-$('.landing-modal').click(toggle);
-$('.play-btn').click(playAgainBtn);
+    createCards();
+    $('.shuffle-btn').click(handleShuffleBtn);
+    $('.reset-btn').click(handleReset);
+    $('.toggle-btn').click(toggle);
+    $('.play-btn').click(playAgainBtn);
 };
 
 function createSound() {
@@ -35,7 +35,7 @@ function createSound() {
 }
 
 function shuffle(arr) {
-    for (var i = arr.length - 1; i > 0; i--) {
+    for (var i = arr.length-1; i > 0; i--) {
         var j = Math.floor(Math.random() * (i + 1));
         [arr[i], arr[j]] = [arr[j], arr[i]];
     }
@@ -44,9 +44,7 @@ function shuffle(arr) {
 
 function playAgainBtn() {
     matches = 0;
-    console.log("playAgain ran")
-    $(".modal").css("display", '');
-    shuffle(cardArr);
+    $(".endModal").addClass("hidden");
     $(".top-row").empty();
     $(".bottom-row").empty();
     createCards();
@@ -58,15 +56,13 @@ function handleReset(){
     $('span').text(avg);
     $('a').text(avg);
     $(".top-row").empty();
-    $(".bottom-row").empty();
-    shuffle(cardArr);
+    $(".bottom-row").empty();    
     createCards();
 }
 
 function handleShuffleBtn(){
     gamesPlayed ++;
     $('a').text(gamesPlayed);
-    shuffle(cardArr);
     $(".top-row").empty();
     $(".bottom-row").empty();
     createCards()
@@ -80,16 +76,14 @@ function createCards() {
     shuffle(cardArr); 
     shuffle(cardArrCopy);
 
-    for(var i = 0; i < 8; i++){
-        duplicateCard = i;
-        
+    for(var i = 0; i < cardArr.length; i++){        
         var cardContainer =  $("<div></div>").addClass("card-container").click(handleCardClicked);
         var frontCard = $("<div></div>").addClass('front zoom').click(createSound);
         var backCard = $("<div></div>");
 
         $(backCard).css({"background-image": "url(../images/"  + cardArr[i] + ")", "background-size": "cover",
         "background-position": "center", "border": "3px groove red", "flex-grow" : 1}).addClass("hidden");
- 
+//  
         $(cardContainer).append(frontCard);
         $(cardContainer).append(backCard);
         $(".top-row").append(cardContainer);
@@ -98,9 +92,9 @@ function createCards() {
         var frontCard2 = $("<div></div>").addClass('front zoom').click(createSound);
         var backCard2 = $("<div></div>");
 
-        $(backCard2).css({"background-image": "url(../images/"  + cardArr[i] + ")", "background-size": "cover",
+        $(backCard2).css({"background-image": "url(../images/"  + cardArrCopy[i] + ")", "background-size": "cover",
         "background-position": "center", "border": "3px groove red", "flex-grow" : 1}).addClass("hidden");
-
+// 
         $(cardContainer2).append(frontCard2);
         $(cardContainer2).append(backCard2);
         $(".bottom-row").append(cardContainer2);
@@ -270,13 +264,13 @@ function finishGame(){
         console.log("finishGame ran");
         gamesPlayed ++;
         $('a').text(gamesPlayed);
-        var modal = $("<div></div>").addClass('modal').css({"display" : "block"});
+        var endModal = $("<div></div>").addClass('endModal');
         var modalMessage = $("<div>You\'ve Won!</div>").addClass('modal-text');
-        var modalBtn = $("<button type='button'></button>").text("Play Again").addClass("btn play-btn btn-success justify-content-center");
+        var modalBtn = $("<button type='button'></button>").text("Play Again");
 
-        $(modal).append(modalMessage);
-        $(modal).append(modalBtn).click(playAgainBtn);
-        $("body").append(modal); 
+        $(endModal).append(modalMessage);
+        $(endModal).append(modalBtn).click(playAgainBtn);
+        $(".wrapper").append(endModal); 
     }
 }
 // function createCards(){    
