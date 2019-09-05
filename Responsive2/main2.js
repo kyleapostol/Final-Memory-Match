@@ -1,8 +1,8 @@
 var cardArr = ["batman3.jpg", "captAmer.jpg", "deadpool.jpg", "flash.jpg", "aquaman.jpg",
-             "iron_Man.jpg", "spiderman2.jpg", "superman3.jpg", "wolverine.jpg", "wolverine.jpg"];
+             "iron_Man.jpg", "spiderman2.jpg", "superman3.jpg", "wolverine.jpg", "blackPanther.jpg"];
              
 var cardArrCopy = ["batman3.jpg", "captAmer.jpg", "deadpool.jpg", "flash.jpg", "aquaman.jpg",
-"iron_Man.jpg", "spiderman2.jpg", "superman3.jpg", "wolverine.jpg", "wolverine.jpg"]; 
+"iron_Man.jpg", "spiderman2.jpg", "superman3.jpg", "wolverine.jpg", "blackPanther.jpg"]; 
 
 var matches = 0;
 var attempts = 0;
@@ -150,78 +150,12 @@ function handleCardClicked(event){
 
 function appendCharacter(card){
     var endStr = card.search(".jpg");
-    var heroGif = card.substring(109, endStr);
-
-    switch(heroGif){
-        case 'batman3':
-            $(".hero-container").addClass("batman-gif");
-            setTimeout(() => {
-                $(".hero-container").removeClass("batman-gif");
-            }, 2000);
-            break; 
-
-        case 'captAmer':
-            $(".hero-container").addClass("captainAmer-gif");
-            setTimeout(() => {
-                $(".hero-container").removeClass("captainAmer-gif");
-            }, 2000);
-            break;       
-
-        case 'deadpool':
-            $(".hero-container").addClass("deadpool-gif");
-            setTimeout(() => {
-                $(".hero-container").removeClass("deadpool-gif");
-            }, 2000);
-            break;
-
-        case 'flash':
-            $(".hero-container").addClass("flash-gif");
-            setTimeout(() => {
-                $(".hero-container").removeClass("flash-gif");
-            }, 2000);
-            break;  
-
-        case 'aquaman':
-            $(".hero-container").addClass("aquaman-gif");
-            setTimeout(() => {
-                $(".hero-container").removeClass("aquaman-gif");
-            }, 2000);
-            break;
-
-        case 'iron_Man':
-            $(".hero-container").addClass("ironman-gif");
-            setTimeout(() => {
-                $(".hero-container").removeClass("ironman-gif");
-            }, 2000);
-            break;      
-
-        case 'spiderman2':
-            $(".hero-container").addClass("spiderman-gif");
-            setTimeout(() => {
-                $(".hero-container").removeClass("spiderman-gif");
-            }, 2300);
-            break;    
-
-        case 'superman3':
-            $(".hero-container").addClass("superman-gif");
-            setTimeout(() => {
-                $(".hero-container").removeClass("superman-gif");
-            }, 2000);
-            break;     
-
-        case 'wolverine':
-            $(".hero-container").addClass("wolverine-gif");
-            setTimeout(() => {
-                $(".hero-container").removeClass("wolverine-gif");
-            }, 2000);
-            break;
-
-        default:
-            $(".hero-container").addClass("default-gif");
-            // setTimeout(() => {
-            //     $(".hero-container").removeClass("default-gif");
-            // }, 2900); 
-    }
+    var heroGif = card.substring(96, endStr);
+    console.log("heroGif: ", heroGif);
+    $(".hero-container").addClass(heroGif);
+    setTimeout(() => {
+        $(".hero-container").removeClass(heroGif);
+    }, 2000);
 };
 function winCondition(firstCardClicked, secondCardClicked){
     isClicked = false;
@@ -260,16 +194,16 @@ function handleAverage(){
 }
 
 function finishGame(){
-    if(matches === 2) {
+    if(matches === 1) {
         console.log("finishGame ran");
         gamesPlayed ++;
         $('a').text(gamesPlayed);
         var endModal = $("<div></div>").addClass('endModal');
         var modalMessage = $("<div>You\'ve Won!</div>").addClass('modal-text');
-        var modalBtn = $("<button type='button'></button>").text("Play Again");
-
+        var modalBtn = $("<button type='button'></button>").addClass('play-btn').text("Play Again");
+        $(modalBtn).click(playAgainBtn);
         $(endModal).append(modalMessage);
-        $(endModal).append(modalBtn).click(playAgainBtn);
+        $(endModal).append(modalBtn);
         $(".wrapper").append(endModal); 
     }
 }
