@@ -20,32 +20,114 @@ $(document).ready(initialize);
 
 function initialize(){
 createCards();
+$('.shuffle-btn').click(handleShuffleBtn);
+$('.reset-btn').click(handleReset);
+$('.landing-modal').click(toggle);
+$('.play-btn').click(playAgainBtn);
 };
 
+function createSound() {
+    var audioElement = $("<audio autoplay></audio>")
+    var audioSource = $("<source>").attr("src", "audio/adriantnt_glass.mp3");
+    var cardSound = $(audioElement).append(audioSource);
+    $('.main').append(cardSound);
+    setTimeout(() => { $(audioElement).remove()}, 500);
+}
+
+function shuffle(arr) {
+    for (var i = arr.length - 1; i > 0; i--) {
+        var j = Math.floor(Math.random() * (i + 1));
+        [arr[i], arr[j]] = [arr[j], arr[i]];
+    }
+    return arr;
+}
+
+function playAgainBtn() {
+    matches = 0;
+    console.log("playAgain ran")
+    $(".modal").css("display", '');
+    shuffle(cardArr);
+    $(".top-row").empty();
+    $(".bottom-row").empty();
+    createCards();
+}
+
+function handleReset(){
+    avg = 0;
+    matches = 0;
+    $('span').text(avg);
+    $('a').text(avg);
+    $(".top-row").empty();
+    $(".bottom-row").empty();
+    shuffle(cardArr);
+    createCards();
+}
+
+function handleShuffleBtn(){
+    gamesPlayed ++;
+    $('a').text(gamesPlayed);
+    shuffle(cardArr);
+    $(".top-row").empty();
+    $(".bottom-row").empty();
+    createCards()
+}
+
+function toggle(){
+    $(".landing-modal").addClass("hidden");
+}
+
 function createCards() {
+    shuffle(cardArr); 
+    shuffle(cardArrCopy);
+
     for(var i = 0; i < 8; i++){
         duplicateCard = i;
         
         var cardContainer =  $("<div></div>").addClass("card-container").click(handleCardClicked);
-        var frontCard = $("<div></div>").addClass('front');
+        var frontCard = $("<div></div>").addClass('front zoom').click(createSound);
         var backCard = $("<div></div>");
 
         $(backCard).css({"background-image": "url(../images/"  + cardArr[i] + ")", "background-size": "cover",
-        "background-position": "center", "border": "3px groove red", "flex-grow" : 1});
-// .addClass("hidden")
+        "background-position": "center", "border": "3px groove red", "flex-grow" : 1}).addClass("hidden");
+ 
         $(cardContainer).append(frontCard);
         $(cardContainer).append(backCard);
         $(".top-row").append(cardContainer);
 
         var cardContainer2 =  $("<div></div>").addClass("card-container").click(handleCardClicked);
-        var frontCard2 = $("<div></div>").addClass('front');
+        var frontCard2 = $("<div></div>").addClass('front zoom').click(createSound);
         var backCard2 = $("<div></div>");
+
+        $(backCard2).css({"background-image": "url(../images/"  + cardArr[i] + ")", "background-size": "cover",
+        "background-position": "center", "border": "3px groove red", "flex-grow" : 1}).addClass("hidden");
 
         $(cardContainer2).append(frontCard2);
         $(cardContainer2).append(backCard2);
         $(".bottom-row").append(cardContainer2);
+    }
+}
 
-
+function handleCardClicked(event){
+    if(isClicked){
+        $(event.currentTarget.childNodes[0]).addClass('hidden');
+        frontCard = $(event.currentTarget.childNodes[1]).removeClass('hidden');
+        $(frontCard).click(event => {event.stopImmediatePropagation()});
+        
+        if( firstCardClicked === null ) {
+            firstCardClicked = event.currentTarget.innerHTML;
+            console.log("event: ", event); 
+            console.log("firstCardClicked: ", firstCardClicked);
+            card1 = $(event.currentTarget.childNodes[0]);
+            flippedCard = $(event.currentTarget.childNodes[1]);
+            return firstCardClicked;
+        } else {
+            secondCardClicked = event.currentTarget.innerHTML;   
+            console.log("secondCardClicked: ", secondCardClicked);         
+            card2 = $(event.currentTarget.childNodes[0]);
+            flippedCard2 = $(event.currentTarget.childNodes[1]);
+            winCondition(firstCardClicked, secondCardClicked);
+            firstCardClicked = null;
+        }        
     }
 }
 
@@ -72,6 +154,81 @@ function handleCardClicked(event){
     }
 }
 
+function appendCharacter(card){
+    var endStr = card.search(".jpg");
+    var heroGif = card.substring(109, endStr);
+
+    switch(heroGif){
+        case 'batman3':
+            $(".hero-container").addClass("batman-gif");
+            setTimeout(() => {
+                $(".hero-container").removeClass("batman-gif");
+            }, 2000);
+            break; 
+
+        case 'captAmer':
+            $(".hero-container").addClass("captainAmer-gif");
+            setTimeout(() => {
+                $(".hero-container").removeClass("captainAmer-gif");
+            }, 2000);
+            break;       
+
+        case 'deadpool':
+            $(".hero-container").addClass("deadpool-gif");
+            setTimeout(() => {
+                $(".hero-container").removeClass("deadpool-gif");
+            }, 2000);
+            break;
+
+        case 'flash':
+            $(".hero-container").addClass("flash-gif");
+            setTimeout(() => {
+                $(".hero-container").removeClass("flash-gif");
+            }, 2000);
+            break;  
+
+        case 'aquaman':
+            $(".hero-container").addClass("aquaman-gif");
+            setTimeout(() => {
+                $(".hero-container").removeClass("aquaman-gif");
+            }, 2000);
+            break;
+
+        case 'iron_Man':
+            $(".hero-container").addClass("ironman-gif");
+            setTimeout(() => {
+                $(".hero-container").removeClass("ironman-gif");
+            }, 2000);
+            break;      
+
+        case 'spiderman2':
+            $(".hero-container").addClass("spiderman-gif");
+            setTimeout(() => {
+                $(".hero-container").removeClass("spiderman-gif");
+            }, 2300);
+            break;    
+
+        case 'superman3':
+            $(".hero-container").addClass("superman-gif");
+            setTimeout(() => {
+                $(".hero-container").removeClass("superman-gif");
+            }, 2000);
+            break;     
+
+        case 'wolverine':
+            $(".hero-container").addClass("wolverine-gif");
+            setTimeout(() => {
+                $(".hero-container").removeClass("wolverine-gif");
+            }, 2000);
+            break;
+
+        default:
+            $(".hero-container").addClass("default-gif");
+            // setTimeout(() => {
+            //     $(".hero-container").removeClass("default-gif");
+            // }, 2900); 
+    }
+};
 function winCondition(firstCardClicked, secondCardClicked){
     isClicked = false;
     attempts++;
@@ -109,7 +266,7 @@ function handleAverage(){
 }
 
 function finishGame(){
-    if(matches === 9) {
+    if(matches === 2) {
         console.log("finishGame ran");
         gamesPlayed ++;
         $('a').text(gamesPlayed);
@@ -119,10 +276,7 @@ function finishGame(){
 
         $(modal).append(modalMessage);
         $(modal).append(modalBtn).click(playAgainBtn);
-        $("body").append(modal);         
-
-        // var finishModal = $(modal).append(playModalBtn);
-        // $("body").addClass("main-opacity");
+        $("body").append(modal); 
     }
 }
 // function createCards(){    

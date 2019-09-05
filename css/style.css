@@ -164,7 +164,6 @@ body {
 .modal {
     text-align: center;
     position: fixed;
-    /* display: block; */
     left: 22rem;
     width: 60%;
     height: 60%;
