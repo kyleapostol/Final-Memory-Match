@@ -52,11 +52,11 @@ body {
 }
 
 .card-container {
-    width:22%;
-    height:37%;
+    width:17.5%;
+    height:40%;
     display: inline-flex;
     flex-wrap: wrap;
-    margin-top: 3%;
+    margin-top: 2%;
     margin-left: 2%;
 }
 
@@ -118,13 +118,13 @@ body {
     display: none;
 }
 
-.modal {
+.endModal {
     text-align: center;
     position: fixed;
-    left: 22rem;
+    bottom: 15%;
     width: 60%;
     height: 60%;
-    margin: 16% auto; /* 15% from the top and centered*/
+    margin-left: 25%;
     background-image: url("../images/modal-end.png");
     background-size: cover;
     background-position: center;
@@ -132,7 +132,28 @@ body {
 
 .modal-text {
     font-family: 'Times New Roman', Times, serif;
-    font-size: 5em;
+    font-size: 15vh;
+}
+
+.landing-modal {
+    overflow: hidden;
+    position: relative;
+    background-image: url("../images/landing-modal.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+}
+
+#title{
+    color: maroon;
+    font-size: 5.5rem;
+    text-align: center;
+    margin-top: 6%;
+    text-shadow: #EEEE00 0 0 10px, #FF0000 5px 5px 5px;
+}
+
+.toggle-btn{
+    margin-left: 50%;
 }
 
 .batman-gif {
@@ -214,11 +235,6 @@ body {
     background-position: center;
 }
 
-.modal-text {
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 5em;
-}
-
 .zoom {
     transition: transform .2s;
 }
@@ -235,7 +251,15 @@ body {
     .card-container {
         margin-top: 5%;
     }
-
+    .endModal {
+        bottom: 25%;
+        width: 75%;
+        height: 35%;
+        margin-left: 13%;
+    }
+    .modal-text{
+        font-size: 7vh;
+    }
 }
 /* iphone 6,7,8 */
 @media only screen 
@@ -271,13 +295,22 @@ body {
         display:block;
     }
     .card-container {
-        margin-top:5%;
+        margin-top: 4%;
     }
     .reset-btn{
         margin: 0;
     }
     .shuffle-btn{
         margin: 0;
+    }
+    .endModal {
+        bottom: 25%;
+        width: 75%;
+        height: 35%;
+        margin-left: 13%;
+    }
+    .modal-text{
+        font-size: 7vh;
     }
 }
 
@@ -298,6 +331,12 @@ body {
   and (orientation: landscape) { 
     .header {
         font-size: 3em;
+    }
+    .card-container {
+        margin-top: 1%;
+    }
+    .top-row {
+        margin-top: 3%;
     }
 }
 
