@@ -110,6 +110,8 @@ body {
     border-radius: 20%;
     background-color: #000;
     color: coral;
+    padding: inherit;
+    font-size: 1.5vw;
 }
 .reset-btn:hover {
     background-color: rgb(55, 54, 54);
@@ -124,6 +126,8 @@ body {
     border-radius: 20%;
     background-color: #000;
     color: aquamarine;
+    padding: inherit;
+    font-size: 1.5vw;
 }
 
 .shuffle-btn:hover {
@@ -171,11 +175,11 @@ body {
 .toggle-btn{
     margin-top: 4%;
     cursor: pointer;
-    margin-left: 43%;
-    width: 22vh;
-    height: 10%;
+    margin-left: 40%;
+    width: 15%;
+    height: 10vh;
     border-radius: 15%;
-    font-size: 6vh;
+    font-size: 3vw;
     font-family: monospace;
     background-color: gold;
     border: 4px red solid;
@@ -300,6 +304,7 @@ body {
     .card-container {
         margin-top: 5%;
     }
+
     .endModal {
         bottom: 25%;
         width: 75%;
@@ -312,20 +317,69 @@ body {
     }
 
     .shuffle-btn {
-        width: 30%;
-        height: 25%;
+        width: 8vw;
+        font-size: inherit;
     }
 
     .reset-btn {
-        width: 30%;
-        height: 25%;
+        width: 8vw;
+        font-size: inherit;
     }
     
     .toggle-btn {
         margin-top: 10%;
         margin-left: 35%;
+        width: 17vh;
+        font-size: 6vw;
+    }
+}/* iphone x */
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 812px) 
+  and (-webkit-min-device-pixel-ratio: 3)
+  and (orientation: landscape) { 
+    .header {
+        font-size: 3em;
+    }
+    .card-container {
+        margin-top: 1%;
+    }
+    .top-row {
+        margin-top: 3%;
+    }
+    .reset-btn {
+        width: 30%;
+    }
+
+    .shuffle-btn {
+        width: 30%;
     }
 }
+
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 812px) 
+  and (-webkit-min-device-pixel-ratio: 3)
+  and (orientation: portrait) {
+    .toggle-btn {
+          margin-left: 10vh;
+          text-align: center;
+    }
+    
+    .reset-btn {
+        width: 8vh;
+    }
+
+    .shuffle-btn {
+        width: 8vh;
+    }
+
+    .stats-contaier {
+        font-size: 3vh;
+    }
+
+}
+
 /* iphone 6,7,8 */
 @media only screen 
   and (min-device-width: 375px) 
@@ -374,6 +428,7 @@ body {
         padding: inherit;
         width: 8vh;
         height: 6vw;
+        font-size: small;
     }
 
     .shuffle-btn{
@@ -381,6 +436,7 @@ body {
         padding: inherit;
         width: 8vh;
         height: 6vw;
+        font-size: small;
     }
 
     .endModal {
@@ -395,8 +451,10 @@ body {
     }
 
     .toggle-btn {
-        margin-top: 15%;
+        margin-top: 10%;
         margin-left: 30%;
+        width: 30%;
+        font-size: 6vw;
     }
     
     #title {
@@ -407,7 +465,7 @@ body {
     }
 
     .stats-container {
-        font-size: 2vh;
+        font-size: 3vw;
     }
 }
 
@@ -434,50 +492,4 @@ body {
         font-size: 3vh;
     }
 }
-/* iphone x */
-@media only screen 
-  and (min-device-width: 375px) 
-  and (max-device-width: 812px) 
-  and (-webkit-min-device-pixel-ratio: 3)
-  and (orientation: landscape) { 
-    .header {
-        font-size: 3em;
-    }
-    .card-container {
-        margin-top: 1%;
-    }
-    .top-row {
-        margin-top: 3%;
-    }
-    .reset-btn {
-        width: 30%;
-    }
 
-    .shuffle-btn {
-        width: 30%;
-    }
-}
-
-@media only screen 
-  and (min-device-width: 375px) 
-  and (max-device-width: 812px) 
-  and (-webkit-min-device-pixel-ratio: 3)
-  and (orientation: portrait) {
-    .toggle-btn {
-          margin-left: 10vh;
-          text-align: center;
-    }
-    
-    .reset-btn {
-        width: 8vh;
-    }
-
-    .shuffle-btn {
-        width: 8vh;
-    }
-
-    .stats-contaier {
-        font-size: 3vh;
-    }
-
-}
