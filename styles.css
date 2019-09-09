@@ -4,7 +4,7 @@
 
 body {
     margin:0;
-    background-image: url('../images/background4.jpg');
+    background-image: url('images/background4.jpg');
     background-size: cover;
     height: 100vh;
     overflow: hidden;
@@ -62,7 +62,7 @@ body {
 }
 
 .front {
-    background-image: url('../images/cardlogo2.jpg!d');
+    background-image: url('images/cardlogo2.jpg!d');
     background-size: cover;
     background-position: center;
     cursor: pointer;
@@ -141,7 +141,7 @@ body {
     width: 60%;
     height: 60%;
     margin-left: 25%;
-    background-image: url("../images/modal-end.png");
+    background-image: url("images/modal-end.png");
     background-size: cover;
     background-position: center;
 }
@@ -153,7 +153,7 @@ body {
 
 .landing-modal {
     position: fixed;
-    background-image: url("../images/landing-modal.jpg");
+    background-image: url("images/landing-modal.jpg");
     background-size: cover;
     background-position: center;
     height: 100%;
@@ -200,66 +200,66 @@ body {
 }
 
 .batman3 {
-    background-image: url('../images/batman.gif');
+    background-image: url('images/batman.gif');
     background-size: cover;
     background-position: center;
 }
 
 .deadpool {
-    background-image: url('../images/deadpool.gif');
+    background-image: url('images/deadpool.gif');
     background-size: 50%;
     background-position: center;
     background-repeat: no-repeat;
 }
 
 .iron_Man {
-    background-image: url('../images/ironman.gif');
+    background-image: url('images/ironman.gif');
     background-size: cover;
     background-position: center;
 }
 .captAmer {
-    background-image: url('../images/captainAmer.gif');
+    background-image: url('images/captainAmer.gif');
     background-size: cover;
     background-position: center;
 }
 .flash {
-    background-image: url('../images/flash.gif');
+    background-image: url('images/flash.gif');
     background-size: 70%;
     background-position: center;
     background-repeat: no-repeat;
 }
 .spiderman2 {
-    background-image: url('../images/spiderman.gif');
+    background-image: url('images/spiderman.gif');
     background-size: 70%;
     background-position: center;
     background-repeat: no-repeat;
 }
 .superman3 {
-    background-image: url('../images/superman.gif');
+    background-image: url('images/superman.gif');
     background-size: 70%;
     background-position: center;
     background-repeat: no-repeat;
 }
 .aquaman {
-    background-image: url('../images/aquaman.gif');
+    background-image: url('images/aquaman.gif');
     background-size: cover;
     background-position: center;
 }
 .wolverine {
-    background-image: url('../images/wolverine.gif');
+    background-image: url('images/wolverine.gif');
     background-size: cover;
     background-position: center;
 }
 
 .blackPanther {
-    background-image: url('../images/blackPanther.gif');
+    background-image: url('images/blackPanther.gif');
     background-position: center;
     background-size: 80%;
     background-repeat: no-repeat;
 }
 
 .default-gif {
-    background-image: url('../images/default.gif');
+    background-image: url('images/default.gif');
     background-size: cover;
     background-position: center;
 }
@@ -280,7 +280,7 @@ body {
     width: 60%;
     height: 60%;
     margin: 16% auto; /* 15% from the top and centered*/
-    background-image: url("../images/modal-end.png");
+    background-image: url("images/modal-end.png");
     background-size: cover;
     background-position: center;
 }
