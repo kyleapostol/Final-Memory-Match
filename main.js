@@ -114,27 +114,6 @@ function handleCardClicked(event){
         $(frontCard).click(event => {event.stopImmediatePropagation()});
         
         if( firstCardClicked === null ) {
-            firstCardClicked = event.currentTarget.innerHTML;
-            card1 = $(event.currentTarget.childNodes[0]);
-            flippedCard = $(event.currentTarget.childNodes[1]);
-            return firstCardClicked;
-        } else {
-            secondCardClicked = event.currentTarget.innerHTML;   
-            card2 = $(event.currentTarget.childNodes[0]);
-            flippedCard2 = $(event.currentTarget.childNodes[1]);
-            winCondition(firstCardClicked, secondCardClicked);
-            firstCardClicked = null;
-        }        
-    }
-}
-
-function handleCardClicked(event){
-    if(isClicked){
-        $(event.currentTarget.childNodes[0]).addClass('hidden');
-        frontCard = $(event.currentTarget.childNodes[1]).removeClass('hidden');
-        $(frontCard).click(event => {event.stopImmediatePropagation()});
-        
-        if( firstCardClicked === null ) {
             firstCardClicked = event.currentTarget.innerHTML; 
             console.log("firstCardClicked: ", firstCardClicked);
             card1 = $(event.currentTarget.childNodes[0]);
@@ -160,6 +139,7 @@ function appendCharacter(card){
         $(".hero-container").removeClass(heroGif);
     }, 2000);
 };
+
 function winCondition(firstCardClicked, secondCardClicked){
     isClicked = false;
     attempts++;

@@ -275,11 +275,10 @@ body {
 .modal {
     text-align: center;
     position: fixed;
-    /* display: block; */
     left: 22rem;
     width: 60%;
     height: 60%;
-    margin: 16% auto; /* 15% from the top and centered*/
+    margin: 16% auto; 
     background-image: url("images/modal-end.png");
     background-size: cover;
     background-position: center;
@@ -357,13 +356,13 @@ body {
 
     .main {
         width: 100%;
-        height: 70%;
+        height: 80%;
         display: static;
     }
 
-    .bottom-half{
+    .bottom-half {
         width:100%;
-        height:100vh;
+        height:88vh;
         display:block;
     }
 
@@ -372,10 +371,12 @@ body {
     }
     .reset-btn{
         margin: 0;
+        padding: inherit;
     }
 
     .shuffle-btn{
         margin: 0;
+        padding: inherit;
     }
 
     .endModal {
@@ -418,8 +419,6 @@ body {
     .shuffle-btn {
         width: 30%;
     }
-
-
 }
 /* iphone x */
 @media only screen 
@@ -452,5 +451,6 @@ body {
   and (orientation: portrait) {
       .toggle-btn {
           margin-left: 25%;
+          text-align: center;
     }
 }
