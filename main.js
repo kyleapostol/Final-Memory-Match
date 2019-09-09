@@ -181,7 +181,7 @@ function finishGame(){
         console.log("finishGame ran");
         gamesPlayed ++;
         $('a').text(gamesPlayed);
-        var endModal = $("<div></div>").addClass('endModal');
+        var endModal = $("<div></div>").addClass('end-modal');
         var modalMessage = $("<div>You\'ve Won!</div>").addClass('modal-text');
         var modalBtn = $("<button type='button'></button>").addClass('play-btn').text("Play Again");
         $(modalBtn).click(playAgainBtn);
