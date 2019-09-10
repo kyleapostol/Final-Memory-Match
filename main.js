@@ -134,7 +134,7 @@ function handleCardClicked(event){
 
 function appendCharacter(card){
     var endStr = card.search(".jpg");
-    var heroGif = card.substring(87, endStr);
+    var heroGif = card.substring(96, endStr);
     console.log("heroGif: ", heroGif);
     $(".hero-container").addClass(heroGif);
     setTimeout(() => {
