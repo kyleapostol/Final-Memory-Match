@@ -90,8 +90,8 @@ function createCards() {
         var backCard = $("<div></div>");
 
         $(backCard).css({"background-image": "url(../images/"  + cardArr[i] + ")", "background-size": "cover",
-        "background-position": "center", "border": "3px groove red", "flex-grow" : 1})
-//   .addClass("hidden");
+        "background-position": "center", "border": "3px groove red", "flex-grow" : 1}).addClass("hidden");
+   
         $(cardContainer).append(frontCard);
         $(cardContainer).append(backCard);
         $(".top-row").append(cardContainer);
@@ -101,8 +101,8 @@ function createCards() {
         var backCard2 = $("<div></div>");
 
         $(backCard2).css({"background-image": "url(../images/"  + cardArrCopy[i] + ")", "background-size": "cover",
-        "background-position": "center", "border": "3px groove red", "flex-grow" : 1})
-//   .addClass("hidden");
+        "background-position": "center", "border": "3px groove red", "flex-grow" : 1}).addClass("hidden");
+   
         $(cardContainer2).append(frontCard2);
         $(cardContainer2).append(backCard2);
         $(".bottom-row").append(cardContainer2);
@@ -137,9 +137,9 @@ function appendCharacter(card){
     var heroGif = card.substring(87, endStr);
     console.log("heroGif: ", heroGif);
     $(".hero-container").addClass(heroGif);
-    // setTimeout(() => {
-    //     $(".hero-container").removeClass(heroGif);
-    // }, 2500);
+    setTimeout(() => {
+        $(".hero-container").removeClass(heroGif);
+    }, 2500);
 };
 
 function winCondition(firstCardClicked, secondCardClicked){
