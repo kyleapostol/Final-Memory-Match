@@ -1,3 +1,5 @@
+$(document).ready(initialize);
+
 var cardArr = ["batman3.jpg", "captAmer.jpg", "deadpool.jpg", "flash.jpg", "aquaman.jpg",
              "iron_Man.jpg", "spiderman2.jpg", "superman3.jpg", "wolverine.jpg", "blackPanther.jpg"];
              
@@ -15,8 +17,6 @@ var card1 = null;
 var card2 = null;
 var flippedCard, flippedCard2 = null;
 var isClicked = true;
-
-$(document).ready(initialize);
 
 function initialize(){
     createCards();
@@ -163,10 +163,8 @@ function notMatching() {
     $(card2).removeClass('hidden');
     $(flippedCard).addClass('hidden');
     $(flippedCard2).addClass('hidden');
-    firstCardClicked = null;
-    secondCardClicked = null;
-    card1 = null;
-    card2 = null;
+    firstCardClicked, secondCardClicked = null;
+    card1, card2 = null;
     isClicked = true;
 }
 
