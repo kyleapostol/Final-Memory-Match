@@ -68,7 +68,6 @@ function handleReset() {
 
 function handleShuffleBtn(){
     if(extraBtnToggle) {
-        gamesPlayed ++;
         $('a').text(gamesPlayed);
         $(".top-row").empty();
         $(".bottom-row").empty();
