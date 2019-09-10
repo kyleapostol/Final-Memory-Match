@@ -1,3 +1,12 @@
+.landing-modal {
+    position: fixed;
+    background-image: url("images/landing-modal.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+    width: 100vw
+}
+
 .wrapper {
     overflow: hidden;
 }
@@ -153,15 +162,6 @@ body {
 .modal-text {
     font-family: 'Times New Roman', Times, serif;
     font-size: 15vh;
-}
-
-.landing-modal {
-    position: fixed;
-    background-image: url("images/landing-modal.jpg");
-    background-size: cover;
-    background-position: center;
-    height: 100%;
-    width: 100vw
 }
 
 #title{

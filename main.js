@@ -117,13 +117,11 @@ function handleCardClicked(event){
         
         if( firstCardClicked === null ) {
             firstCardClicked = event.currentTarget.innerHTML; 
-            console.log("firstCardClicked: ", firstCardClicked);
             card1 = $(event.currentTarget.childNodes[0]);
             flippedCard = $(event.currentTarget.childNodes[1]);
             return firstCardClicked;
         } else {
             secondCardClicked = event.currentTarget.innerHTML;   
-            console.log("secondCardClicked: ", secondCardClicked);         
             card2 = $(event.currentTarget.childNodes[0]);
             flippedCard2 = $(event.currentTarget.childNodes[1]);
             winCondition(firstCardClicked, secondCardClicked);
@@ -134,8 +132,8 @@ function handleCardClicked(event){
 
 function appendCharacter(card){
     var endStr = card.search(".jpg");
-    var heroGif = card.substring(96, endStr);
-    console.log("heroGif: ", heroGif);
+    var startStr = card.search("/image");
+    var heroGif = card.substring((startStr + 8), endStr);
     $(".hero-container").addClass(heroGif);
     setTimeout(() => {
         $(".hero-container").removeClass(heroGif);
@@ -180,7 +178,6 @@ function handleAverage(){
 
 function finishGame(){
     if(matches === 10) {
-        console.log("finishGame ran");
         gamesPlayed ++;
         $('a').text(gamesPlayed);
         var endModal = $("<div></div>").addClass('end-modal');
