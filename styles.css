@@ -256,7 +256,7 @@ body {
 }
 
 .blackPanther {
-    background-image: url('images/blackPanther.gif');
+    background-image: url('images/black_panther.gif');
     background-position: center;
     background-size: 80%;
     background-repeat: no-repeat;
@@ -467,6 +467,32 @@ body {
 
     .stats-container {
         font-size: 3vw;
+    }
+
+    .deadpool {
+        background-size: 28%;
+    }
+    
+    .iron_Man {
+        background-size: 57%;
+        background-repeat: no-repeat;
+    }
+
+    .flash {
+     background-size: 40%;
+    }
+
+    .spiderman2 {
+        background-size: 50%;
+    }
+
+    .superman3 {
+        background-size: 36%;
+    }
+
+    .default-gif {
+        background-size: 52%;
+        background-repeat: no-repeat;
     }
 }
 
