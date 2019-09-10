@@ -17,6 +17,7 @@ var card1 = null;
 var card2 = null;
 var flippedCard, flippedCard2 = null;
 var isClicked = true;
+var extraBtnToggle = true;
 
 function initialize(){
     createCards();
@@ -44,7 +45,6 @@ function shuffle(arr) {
 }
 
 function playAgainBtn() {
-    console.log("playAgainBtn gets called");
     matches = 0;
     $(".end-modal").addClass("hidden");
     $(".top-row").empty();
@@ -52,24 +52,30 @@ function playAgainBtn() {
     createCards();
 }
 
-function handleReset(){
-    avg = 0;
-    matches = 0;
-    $('span').text(avg);
-    $('a').text(avg);
-    $(".top-row").empty();
-    $(".bottom-row").empty();    
-    createCards();
-    appendCharacter("default-gif")
+function handleReset() {
+    if(extraBtnToggle) {
+        avg = 0;
+        matches = 0;
+        $('span').text(avg);
+        $('a').text(avg);
+        $(".top-row").empty();
+        $(".bottom-row").empty();    
+        createCards();
+        extraBtnToggle = false;
+        appendCharacter("default-gif");
+    }
 }
 
 function handleShuffleBtn(){
-    gamesPlayed ++;
-    $('a').text(gamesPlayed);
-    $(".top-row").empty();
-    $(".bottom-row").empty();
-    createCards();
-    appendCharacter("default-gif");
+    if(extraBtnToggle) {
+        gamesPlayed ++;
+        $('a').text(gamesPlayed);
+        $(".top-row").empty();
+        $(".bottom-row").empty();
+        createCards();
+        extraBtnToggle = false;
+        appendCharacter("default-gif");   
+    }
 }
 
 function toggle(){
@@ -131,14 +137,12 @@ function handleCardClicked(event){
     }
 }
 
-function appendCharacter(card){
-    var endStr = card.search(".jpg");
-    var startStr = card.search("/image");
-    var heroGif = card.substring((startStr + 8), endStr);
-    $(".hero-container").addClass(heroGif);
+function appendCharacter(cardName){
+    $(".hero-container").addClass(cardName);
     setTimeout(() => {
-        $(".hero-container").removeClass(heroGif);
-    }, 2500);
+        extraBtnToggle = true;
+        $(".hero-container").removeClass(cardName);
+    }, 2200);
 };
 
 function winCondition(firstCardClicked, secondCardClicked){
@@ -146,11 +150,12 @@ function winCondition(firstCardClicked, secondCardClicked){
     attempts++;
     if(firstCardClicked === secondCardClicked) {
         matches++;
-        appendCharacter(firstCardClicked);
-        firstCardClicked = null;
-        secondCardClicked = null;
-        card1 = null;
-        card2 = null;
+        var endStr = firstCardClicked.search(".jpg");
+        var startStr = firstCardClicked.search("/image");
+        var cardName = firstCardClicked.substring((startStr + 8), endStr);
+        appendCharacter(cardName);
+        firstCardClicked, secondCardClicked = null;
+        card1, card2 = null;
         isClicked = true;
         $('span').text(handleAverage());
         finishGame();
