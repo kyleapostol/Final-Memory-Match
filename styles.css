@@ -11,7 +11,7 @@ body {
 }
 .header {
     width: 100%;
-    height: 12vh;
+    height: 10vh;
     font-family: "Time New Roman", Times;
     text-align: center;
     font-size: 12vh;
@@ -395,7 +395,8 @@ body {
         display: flex;
         width: 100%;
         height: 15%;
-    } 
+    }
+
 
     .stats {
         width:50%;
@@ -414,9 +415,9 @@ body {
     }
 
     .bottom-half {
-        width:100%;
-        height:88vh;
-        display:block;
+        width: 100%;
+        height: 90vh;
+        display: block;
     }
 
     .card-container {

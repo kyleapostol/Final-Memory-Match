@@ -59,6 +59,7 @@ function handleReset(){
     $(".top-row").empty();
     $(".bottom-row").empty();    
     createCards();
+    appendCharacter("default-gif")
 }
 
 function handleShuffleBtn(){
@@ -66,7 +67,8 @@ function handleShuffleBtn(){
     $('a').text(gamesPlayed);
     $(".top-row").empty();
     $(".bottom-row").empty();
-    createCards()
+    createCards();
+    appendCharacter("default-gif");
 }
 
 function toggle(){
@@ -137,7 +139,7 @@ function appendCharacter(card){
     $(".hero-container").addClass(heroGif);
     setTimeout(() => {
         $(".hero-container").removeClass(heroGif);
-    }, 2000);
+    }, 2500);
 };
 
 function winCondition(firstCardClicked, secondCardClicked){
@@ -154,7 +156,7 @@ function winCondition(firstCardClicked, secondCardClicked){
         $('span').text(handleAverage());
         finishGame();
     } else {
-        setTimeout(notMatching,1500);
+        setTimeout(notMatching,1200);
     }
 }
 
