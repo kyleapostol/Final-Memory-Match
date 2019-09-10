@@ -152,7 +152,6 @@ function winCondition(firstCardClicked, secondCardClicked){
         var endStr = firstCardClicked.search(".jpg");
         var startStr = firstCardClicked.search("/image");
         var cardName = firstCardClicked.substring((startStr + 8), endStr);
-        console.log('card Name: ', cardName)
         appendCharacter(cardName);
         firstCardClicked, secondCardClicked = null;
         card1, card2 = null;
