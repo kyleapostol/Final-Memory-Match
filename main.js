@@ -44,8 +44,9 @@ function shuffle(arr) {
 }
 
 function playAgainBtn() {
+    console.log("playAgainBtn gets called");
     matches = 0;
-    $(".endModal").addClass("hidden");
+    $(".end-modal").addClass("hidden");
     $(".top-row").empty();
     $(".bottom-row").empty();
     createCards();
@@ -175,7 +176,7 @@ function handleAverage(){
 }
 
 function finishGame(){
-    if(matches === 10) {
+    if(matches === 1) {
         gamesPlayed ++;
         $('a').text(gamesPlayed);
         var endModal = $("<div></div>").addClass('end-modal');
