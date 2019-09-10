@@ -1,10 +1,10 @@
 $(document).ready(initialize);
 
 var cardArr = ["batman3.jpg", "captAmer.jpg", "deadpool.jpg", "flash.jpg", "aquaman.jpg",
-             "iron_Man.jpg", "spiderman2.jpg", "superman3.jpg", "wolverine.jpg", "blackPanther.jpg"];
+             "iron_Man.jpg", "spiderman2.jpg", "superman3.jpg", "wolverine.jpg", "black_panther.jpg"];
              
 var cardArrCopy = ["batman3.jpg", "captAmer.jpg", "deadpool.jpg", "flash.jpg", "aquaman.jpg",
-"iron_Man.jpg", "spiderman2.jpg", "superman3.jpg", "wolverine.jpg", "blackPanther.jpg"]; 
+"iron_Man.jpg", "spiderman2.jpg", "superman3.jpg", "wolverine.jpg", "black_panther.jpg"]; 
 
 var matches = 0;
 var attempts = 0;
@@ -141,7 +141,7 @@ function appendCharacter(cardName){
     setTimeout(() => {
         extraBtnToggle = true;
         $(".hero-container").removeClass(cardName);
-    }, 2200);
+    }, 2500);
 };
 
 function winCondition(firstCardClicked, secondCardClicked){
@@ -152,6 +152,7 @@ function winCondition(firstCardClicked, secondCardClicked){
         var endStr = firstCardClicked.search(".jpg");
         var startStr = firstCardClicked.search("/image");
         var cardName = firstCardClicked.substring((startStr + 8), endStr);
+        console.log('card Name: ', cardName)
         appendCharacter(cardName);
         firstCardClicked, secondCardClicked = null;
         card1, card2 = null;
