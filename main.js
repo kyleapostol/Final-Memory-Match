@@ -176,7 +176,7 @@ function handleAverage(){
 }
 
 function finishGame(){
-    if(matches === 1) {
+    if(matches === 10) {
         gamesPlayed ++;
         $('a').text(gamesPlayed);
         var endModal = $("<div></div>").addClass('end-modal');
