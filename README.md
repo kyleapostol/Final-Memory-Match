@@ -1,12 +1,13 @@
 # Final-Memory-Match
+
 Getting Started
 Initial Setup
 Fork this repo and clone from the terminal.
+$ git clone https://github.com/kyleapostol/Final-Memory-Match.git
 
-$ git clone 
 Navigate into cloned directory and be on the master branch
 
-Open the index.html in your default browser and enjoy.
+Create a live server or open the index.html in your default browser.
 
 Technologies
 JavaScript
