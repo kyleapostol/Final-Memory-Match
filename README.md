@@ -11,9 +11,9 @@ Navigate into cloned directory and be on the master branch
 
 Create a live server or open the index.html in your default browser.
 
--Technologies
--JavaScript
--CSS3
--HTML5
--jQuery
+- Technologies
+- JavaScript
+- CSS3
+- HTML5
+- jQuery
 
