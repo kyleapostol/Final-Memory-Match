@@ -211,7 +211,7 @@ body {
 
 .deadpool {
     background-image: url('images/deadpool.gif');
-    background-size: 50%;
+    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
