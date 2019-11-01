@@ -119,8 +119,6 @@ function handleCardClicked(event){
     if(isClicked){
         $(event.currentTarget.childNodes[0]).addClass('hidden');
         frontCard = $(event.currentTarget.childNodes[1]).removeClass('hidden');
-        console.log("event: ", event);
-        console.log("frontcard: ", frontCard);
         $(frontCard).click(event => {event.stopImmediatePropagation()});
         
         if( firstCardClicked === null ) {
