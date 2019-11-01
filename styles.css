@@ -1,0 +1,522 @@
+.landing-modal {
+    position: fixed;
+    background-image: url("images/landing-modal.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+    width: 100vw
+}
+
+.wrapper {
+    overflow: hidden;
+}
+
+body {
+    margin:0;
+    background-image: url('images/background4.jpg');
+    background-size: cover;
+    height: 100vh;
+    overflow: hidden;
+}
+.header {
+    width: 100%;
+    height: 10vh;
+    font-family: "Time New Roman", Times;
+    text-align: center;
+    font-size: 12vh;
+    text-shadow: #00f7ff 0 0 10px, #FF0000 5px 5px 5px;
+}
+.bottom-half {
+    display:flex;
+    height:90vh;
+}
+.aside {
+    height: 90vh;
+    width: 25%;
+}
+
+.stats {
+    height: 50%;
+    width: 100%;
+}
+
+.hero-container {
+    height: 50%;
+    width: 100%;
+}
+
+.main {
+    height: 90vh;
+    width: 75%;
+}
+
+.top-row {
+    width: 100%;
+    height: 50%;
+}
+
+.bottom-row {
+    width: 100%;
+    height: 50%;
+    margin-top: -3%;
+}
+
+.card-container {
+    width:17.5%;
+    height:40%;
+    display: inline-flex;
+    flex-wrap: wrap;
+    margin-top: 2%;
+    margin-left: 2%;
+}
+
+.front {
+    background-image: url('images/cardlogo2.jpg!d');
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+    border: 3px outset #F23333;
+    flex-grow: 1;
+}
+
+.front:hover {
+    width: 450px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.btn-container {
+    height: 50%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.stats-container {
+    height: 50%;
+}
+
+.acc-container {
+    height: 50%;
+    background-image: linear-gradient(to right, rgba(255,0,0,0), rgb(20, 110, 227));
+    text-align: center;
+    color: white;
+    font-size: 1.5em;
+}
+
+.total-games {
+    height: 50%;
+    background-image: linear-gradient(to right, rgba(255,0,0,0), rgb(20, 110, 227));
+    text-align: center;
+    color: white;
+    font-size: 1.5em;
+}
+
+.reset-btn {
+    cursor: pointer;
+    margin-top: 23%;
+    margin-bottom: 40%;
+    width: 25%;
+    height: 25%;
+    border-radius: 20%;
+    background-color: #000;
+    color: coral;
+    padding: inherit;
+    font-size: 1.5vw;
+}
+.reset-btn:hover {
+    background-color: rgb(55, 54, 54);
+}
+
+.shuffle-btn {
+    cursor: pointer;
+    margin-top: 23%;
+    margin-bottom: 40%;
+    width: 25%;
+    height: 25%;
+    border-radius: 20%;
+    background-color: #000;
+    color: aquamarine;
+    padding: inherit;
+    font-size: 1.5vw;
+}
+
+.shuffle-btn:hover {
+    background-color: rgb(55, 54, 54);
+}
+
+.hidden {
+    display: none;
+}
+
+.end-modal {
+    text-align: center;
+    position: fixed;
+    bottom: 15%;
+    width: 60%;
+    height: 60%;
+    margin-left: 25%;
+    background-image: url("images/modal-end.png");
+    background-size: cover;
+    background-position: center;
+}
+
+.modal-text {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 15vh;
+}
+
+#title{
+    color: #fff900;
+    font-size: 20vh;
+    text-align: center;
+    margin-top: 6%;
+    text-shadow: #00f7ff 0 0 10px, #FF0000 5px 5px 5px;
+}
+
+.toggle-btn{
+    margin-top: 4%;
+    cursor: pointer;
+    margin-left: 40%;
+    width: 15%;
+    height: 10vh;
+    border-radius: 15%;
+    font-size: 3vw;
+    font-family: monospace;
+    background-color: gold;
+    border: 4px red solid;
+    box-shadow: 20px 20px 40px 10px pink;
+}
+
+.toggle-btn:hover {
+    background-color: red;
+    border-radius: 45%;
+    color: white;
+    transition: 1.5s;    
+    font-size: 5vh;    
+    box-shadow: 20px 20px 40px 10px #fa5a75;
+}
+
+.play-btn {
+    background-color: lightgreen;
+    width: 18vh;
+    border-radius: 23%;
+    margin-top: 10vh;
+    margin-right: 3%;
+}
+
+.batman3 {
+    background-image: url('images/batman.gif');
+    background-size: cover;
+    background-position: center;
+}
+
+.deadpool {
+    background-image: url('images/deadpool.gif');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.iron_Man {
+    background-image: url('images/ironman.gif');
+    background-size: cover;
+    background-position: center;
+}
+.captAmer {
+    background-image: url('images/captainAmer.gif');
+    background-size: cover;
+    background-position: center;
+}
+.flash {
+    background-image: url('images/flash.gif');
+    background-size: 70%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.spiderman2 {
+    background-image: url('images/spiderman.gif');
+    background-size: 70%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.superman3 {
+    background-image: url('images/superman.gif');
+    background-size: 70%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.aquaman {
+    background-image: url('images/aquaman.gif');
+    background-size: cover;
+    background-position: center;
+}
+.wolverine {
+    background-image: url('images/wolverine.gif');
+    background-size: cover;
+    background-position: center;
+}
+
+.black_panther {
+    background-image: url('images/black_panther.gif');
+    background-position: center;
+    background-size: 80%;
+    background-repeat: no-repeat;
+}
+
+.default-gif {
+    background-image: url('images/default.gif');
+    background-size: cover;
+    background-position: center;
+}
+
+.zoom {
+    transition: transform .2s;
+}
+
+.zoom:hover {
+    transform: scale(1.1);
+}
+
+.modal {
+    text-align: center;
+    position: fixed;
+    left: 22rem;
+    width: 60%;
+    height: 60%;
+    margin: 16% auto; 
+    background-image: url("images/modal-end.png");
+    background-size: cover;
+    background-position: center;
+}
+
+.zoom {
+    transition: transform .2s;
+}
+
+.zoom:hover {
+    transform: scale(1.1);
+}
+/* ipad */
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (orientation: portrait) 
+  and (-webkit-min-device-pixel-ratio: 2) {
+    .card-container {
+        margin-top: 5%;
+    }
+
+    .endModal {
+        bottom: 25%;
+        width: 75%;
+        height: 35%;
+        margin-left: 13%;
+    }
+
+    .modal-text{
+        font-size: 7vh;
+    }
+
+    .shuffle-btn {
+        width: 8vw;
+        font-size: inherit;
+    }
+
+    .reset-btn {
+        width: 8vw;
+        font-size: inherit;
+    }
+    
+    .toggle-btn {
+        margin-top: 10%;
+        margin-left: 35%;
+        width: 17vh;
+        font-size: 6vw;
+    }
+}/* iphone x */
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 812px) 
+  and (-webkit-min-device-pixel-ratio: 3)
+  and (orientation: landscape) { 
+    .header {
+        font-size: 3em;
+    }
+    .card-container {
+        margin-top: 1%;
+    }
+    .top-row {
+        margin-top: 3%;
+    }
+    .reset-btn {
+        width: 30%;
+    }
+
+    .shuffle-btn {
+        width: 30%;
+    }
+}
+
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 812px) 
+  and (-webkit-min-device-pixel-ratio: 3)
+  and (orientation: portrait) {
+    .toggle-btn {
+          margin-left: 10vh;
+          text-align: center;
+    }
+    
+    .reset-btn {
+        width: 8vh;
+    }
+
+    .shuffle-btn {
+        width: 8vh;
+    }
+
+    .stats-contaier {
+        font-size: 3vh;
+    }
+
+}
+
+/* iphone 6,7,8 */
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 667px) 
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: portrait) { 
+    .header {
+        width: 100%;
+        font-size: 3em;
+    }
+
+    .aside {
+        display: flex;
+        width: 100%;
+        height: 15%;
+    }
+
+
+    .stats {
+        width:50%;
+        height: 100%;
+    }
+
+    .hero-container {
+        width: 50%;
+        height: 100%;
+    }
+
+    .main {
+        width: 100%;
+        height: 75vh;
+        display: static;
+    }
+
+    .bottom-half {
+        width: 100%;
+        height: 90vh;
+        display: block;
+    }
+
+    .card-container {
+        margin-top: 4%;
+    }
+
+    .reset-btn{
+        margin: 0;
+        padding: inherit;
+        width: 8vh;
+        height: 6vw;
+        font-size: small;
+    }
+
+    .shuffle-btn{
+        margin: 0;
+        padding: inherit;
+        width: 8vh;
+        height: 6vw;
+        font-size: small;
+    }
+
+    .endModal {
+        bottom: 25%;
+        width: 75%;
+        height: 35%;
+        margin-left: 13%;
+    }
+
+    .modal-text{
+        font-size: 7vh;
+    }
+
+    .toggle-btn {
+        margin-top: 10%;
+        margin-left: 30%;
+        width: 30%;
+        font-size: 6vw;
+    }
+    
+    #title {
+        font-size: 12vh;
+    }
+    .play-btn {
+        margin-top: 1vh;
+    }
+
+    .stats-container {
+        font-size: 3vw;
+    }
+
+    .deadpool {
+        background-size: 28%;
+    }
+    
+    .iron_Man {
+        background-size: 57%;
+        background-repeat: no-repeat;
+    }
+
+    .flash {
+     background-size: 40%;
+    }
+
+    .spiderman2 {
+        background-size: 50%;
+    }
+
+    .superman3 {
+        background-size: 36%;
+    }
+
+    .default-gif {
+        background-size: 52%;
+        background-repeat: no-repeat;
+    }
+}
+
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 667px) 
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: landscape) {
+      .header {
+        font-size: 3em;
+    }
+    
+    .reset-btn {
+        width: 15vh;
+        padding: inherit;
+    }
+
+    .shuffle-btn {
+        width: 15vh;
+        padding: inherit;
+    }
+
+    .stats-container {
+        font-size: 3vh;
+    }
+}
+
