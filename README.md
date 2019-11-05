@@ -3,8 +3,8 @@
 
 Getting Started
 Initial Setup
--Fork this repo and clone from the terminal.
--$ git clone https://github.com/kyleapostol/Final-Memory-Match.git
+- Fork this repo and clone from the terminal.
+- $ git clone https://github.com/kyleapostol/Final-Memory-Match.git
 
 
 Navigate into cloned directory and be on the master branch
