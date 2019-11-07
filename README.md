@@ -3,7 +3,7 @@
  
 1) Fork this repo and clone from the terminal.
 2) $ git clone https://github.com/kyleapostol/Final-Memory-Match.git
-3) Navigate into cloned directory and be on the master branch.
+3) Navigate into cloned directory and checkout master branch.
 4) Open the index.html in your browser.
 
 <h3>Technologies Used</h3>
