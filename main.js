@@ -89,7 +89,7 @@ function createAudio(){
 function createCards() {
     shuffle(cardArr); 
     shuffle(cardArrCopy);
-
+console.log(createSound);
     for(var i = 0; i < cardArr.length; i++){        
         var cardContainer =  $("<div></div>").addClass("card-container").click(handleCardClicked);
         var frontCard = $("<div></div>").addClass('front zoom').click(createSound);
