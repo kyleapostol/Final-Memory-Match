@@ -7,8 +7,6 @@
 3) Navigate into cloned directory and checkout master branch.
 4) Open the index.html in your browser.
 
-<h3>Technologies Used</h3>
-
 - JavaScript
 - CSS3
 - HTML5
