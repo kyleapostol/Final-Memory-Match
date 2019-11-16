@@ -1,10 +1,10 @@
 $(document).ready(initialize);
 
-var cardArr = ["batman3.jpg", "captAmer.jpg", "deadpool.jpg", "flash.jpg", "aquaman.jpg",
+var cardArr = ["batman3.jpg","superman3.jpg", "captAmer.jpg", "deadpool.jpg", "flash.jpg",
              "iron_Man.jpg", "spiderman2.jpg", "superman3.jpg", "wolverine.jpg", "black_panther.jpg"];
              
 var cardArrCopy = ["batman3.jpg", "captAmer.jpg", "deadpool.jpg", "flash.jpg", "aquaman.jpg",
-"iron_Man.jpg", "spiderman2.jpg", "superman3.jpg", "wolverine.jpg", "black_panther.jpg"]; 
+"iron_Man.jpg", "spiderman2.jpg", "aquaman.jpg", "wolverine.jpg", "black_panther.jpg"]; 
 
 var matches = 0;
 var attempts = 0;
@@ -18,6 +18,8 @@ var card2 = null;
 var flippedCard, flippedCard2 = null;
 var isClicked = true;
 var extraBtnToggle = true;
+var soundctrl = 0;
+
 
 function initialize(){
     createCards();
@@ -28,13 +30,33 @@ function initialize(){
     $('.toggle-btn').click(createAudio);
 };
 
-function createSound() {
-    var audioElement = $("<audio autoplay></audio>")
+function createFalseSound() {
+    var audioElement = $("<audio autoplay></audio>");
+    var audioSource = $("<source>").attr("src", "audio/metalgearsolid.mp3");
+    var cardSound = $(audioElement).append(audioSource);
+    $('.main').append(cardSound);
+}
+
+function createWinSound() {
+    var audioElement = $("<audio autoplay></audio>");
+    var audioSource = $("<source>").attr("src", "audio/hallelujahshort.mp3");
+    var cardSound = $(audioElement).append(audioSource);
+    $('.main').append(cardSound);
+}
+
+function createSound(){
+    var audioElement = $("<audio autoplay></audio>");
     var audioSource = $("<source>").attr("src", "audio/adriantnt_glass.mp3");
     var cardSound = $(audioElement).append(audioSource);
     $('.main').append(cardSound);
-    setTimeout(() => { $(audioElement).remove()}, 500);
 }
+
+function createAudio(){
+    var audio = $("<audio autoplay></audio>");
+    $(audio).attr("src", "audio/untitled_327.mp3");
+    $("body").append(audio);
+}
+
 
 function shuffle(arr) {
     for (var i = arr.length-1; i > 0; i--) {
@@ -81,18 +103,12 @@ function toggle(){
     $(".landing-modal").addClass("hidden");
 }
 
-function createAudio(){
-    var audio = $("<audio autoplay></audio>").attr("src", "audio/untitled_327.mp3");
-    $("body").append(audio);
-}
-
 function createCards() {
     shuffle(cardArr); 
     shuffle(cardArrCopy);
-
     for(var i = 0; i < cardArr.length; i++){        
         var cardContainer =  $("<div></div>").addClass("card-container").click(handleCardClicked);
-        var frontCard = $("<div></div>").addClass('front zoom').click(createSound);
+        var frontCard = $("<div></div>").addClass('front zoom')
         var backCard = $("<div></div>");
 
         $(backCard).css({"background-image": "url(../images/"  + cardArr[i] + ")", "background-size": "cover",
@@ -103,7 +119,7 @@ function createCards() {
         $(".top-row").append(cardContainer);
 
         var cardContainer2 =  $("<div></div>").addClass("card-container").click(handleCardClicked);
-        var frontCard2 = $("<div></div>").addClass('front zoom').click(createSound);
+        var frontCard2 = $("<div></div>").addClass('front zoom')
         var backCard2 = $("<div></div>");
 
         $(backCard2).css({"background-image": "url(../images/"  + cardArrCopy[i] + ")", "background-size": "cover",
@@ -122,6 +138,7 @@ function handleCardClicked(event){
         $(frontCard).click(event => {event.stopImmediatePropagation()});
         
         if( firstCardClicked === null ) {
+            createSound();
             firstCardClicked = event.currentTarget.innerHTML; 
             card1 = $(event.currentTarget.childNodes[0]);
             flippedCard = $(event.currentTarget.childNodes[1]);
@@ -148,6 +165,7 @@ function winCondition(firstCardClicked, secondCardClicked){
     isClicked = false;
     attempts++;
     if(firstCardClicked === secondCardClicked) {
+        createWinSound();
         matches++;
         var endStr = firstCardClicked.search(".jpg");
         var startStr = firstCardClicked.search("/image");
@@ -159,6 +177,7 @@ function winCondition(firstCardClicked, secondCardClicked){
         $('span').text(handleAverage());
         finishGame();
     } else {
+        createFalseSound();
         setTimeout(notMatching,1200);
     }
 }
@@ -168,6 +187,7 @@ function notMatching() {
     $(card2).removeClass('hidden');
     $(flippedCard).addClass('hidden');
     $(flippedCard2).addClass('hidden');
+
     firstCardClicked, secondCardClicked = null;
     card1, card2 = null;
     isClicked = true;

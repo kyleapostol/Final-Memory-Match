@@ -2,7 +2,6 @@
 # Final-Memory-Match
 
 Getting Started
-Initial Setup
 -Fork this repo and clone from the terminal.
 -$ git clone https://github.com/kyleapostol/Final-Memory-Match.git
 
