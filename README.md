@@ -1,18 +1,14 @@
+<h3>Live Demo : <a href="http://memory-match.kyleapostol.com/">Link<a><h3>
 # Ultimate-Memory-Match
-# Final-Memory-Match
+<h3> Initial Setup</h3>
+ 
+1) Fork this repo and clone from the terminal.
+2) $ git clone https://github.com/kyleapostol/Ultimate-Memory-Match.git
+3) Navigate into cloned directory and checkout master branch.
+4) Open the index.html in your browser.
 
-Getting Started
--Fork this repo and clone from the terminal.
--$ git clone https://github.com/kyleapostol/Final-Memory-Match.git
-
-
-Navigate into cloned directory and be on the master branch
-
-Create a live server or open the index.html in your default browser.
-
--Technologies
--JavaScript
--CSS3
--HTML5
--jQuery
+- JavaScript
+- CSS3
+- HTML5
+- jQuery
 
